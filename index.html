@@ -1,0 +1,659 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<title>Franciele Falconi | Terapeuta Psicanalista Sistêmica em Florianópolis</title>
+<meta name="description" content="Desenvolvimento humano e saúde emocional para pessoas e empresas. Método Falconi: um caminho estruturado para transformação emocional real.">
+<link rel="canonical" href="https://darkviolet-whale-772897.hostingersite.com/">
+<meta name="theme-color" content="#29311e">
+<meta name="robots" content="index, follow">
+
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Franciele Falconi">
+<meta property="og:title" content="Franciele Falconi — Terapeuta Psicanalista Sistêmica">
+<meta property="og:description" content="Desenvolvimento humano e saúde emocional para pessoas e empresas. Método Falconi: um caminho estruturado para transformação emocional real.">
+<meta property="og:url" content="https://darkviolet-whale-772897.hostingersite.com/">
+<meta property="og:locale" content="pt_BR">
+<meta property="og:image" content="https://darkviolet-whale-772897.hostingersite.com/assets/og-image.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Franciele Falconi — Terapeuta Psicanalista Sistêmica">
+<meta name="twitter:description" content="Desenvolvimento humano e saúde emocional para pessoas e empresas.">
+<meta name="twitter:image" content="https://darkviolet-whale-772897.hostingersite.com/assets/og-image.jpg">
+
+<link rel="icon" href="assets/favicon.png" type="image/png" sizes="any">
+<link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600&family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Montserrat:wght@300;400;500;600&family=Petit+Formal+Script&display=swap" rel="stylesheet">
+
+<style>
+*,*::before,*::after{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:#f1ece1;font-family:'Montserrat',sans-serif;color:#3c4a34}
+a{color:#8a6a2f;text-decoration:none}
+a:hover{color:#cb9d50}
+@keyframes ffPulse{0%,100%{opacity:.45;transform:scale(1)}50%{opacity:1;transform:scale(1.3)}}
+@keyframes ffSpin{from{transform:rotate(0deg)}to{transform:rotate(360deg)}}
+@keyframes ffDown{0%,100%{transform:translateX(0);opacity:.9}50%{transform:translateX(7px);opacity:.4}}
+@keyframes ffBtnPulse{0%,100%{box-shadow:0 8px 24px rgba(203,157,80,.3)}55%{box-shadow:0 12px 34px rgba(203,157,80,.5),0 0 0 8px rgba(203,157,80,.12)}}
+::selection{background:#cb9d50;color:#fff}
+.ff-btn-primary{animation:ffBtnPulse 2.6s ease-in-out infinite}
+.ff-btn-primary:hover{animation:none}
+#ffprogress{position:fixed;top:0;left:0;height:3px;width:0%;background:linear-gradient(90deg,#d9b877,#cb9d50);z-index:70;pointer-events:none;transition:width .12s linear}
+[data-plx-scroll]{will-change:transform}
+.ff-hero{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,.78fr);align-items:center;gap:clamp(20px,3vw,40px)}
+.ff-navlinks{display:flex;align-items:center;gap:clamp(12px,1.8vw,26px)}
+.ff-hero-bg{position:absolute;inset:0;z-index:0;width:100%;height:100%;object-fit:cover;object-position:100% 50%;pointer-events:none}
+.ff-paths{display:grid;grid-template-columns:1fr 1fr;gap:clamp(30px,4vw,64px)}
+.ff-depo{display:grid;grid-template-columns:repeat(3,minmax(0,1fr))}
+.ff-depo > div + div{border-left:1px solid rgba(217,184,119,.26)}
+.ff-two{display:grid;grid-template-columns:minmax(0,.72fr) minmax(0,1.28fr);gap:clamp(40px,5vw,84px);align-items:start}
+.ff-two > *{min-width:0}
+.ff-steps{display:flex;align-items:flex-start;gap:clamp(6px,1vw,14px);scrollbar-width:none}
+.ff-steps > div{min-width:0}
+.ff-steps::-webkit-scrollbar{display:none}
+.ff-steps > div{flex:1 1 0;min-width:0}
+.ff-arrow{flex:0 0 auto;align-self:flex-start;margin-top:34px;color:#cb9d50;font-size:13px;opacity:.7}
+.ff-corp{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:clamp(28px,3vw,48px) clamp(28px,3vw,54px)}
+.ff-presence{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:clamp(40px,5vw,86px);align-items:center}
+.ff-final{display:grid;grid-template-columns:minmax(0,1.06fr) minmax(0,.94fr);gap:clamp(36px,4vw,70px);align-items:center}
+.ff-contact{display:grid;grid-template-columns:1fr 1fr;gap:20px 34px}
+
+/* hovers portados dos atributos style-hover do Claude Design */
+.ff-navlink:hover{color:#d9b877}
+#ffnav .ff-btn-primary:hover{transform:translateY(-1px)}
+.ff-btn-primary:hover{transform:translateY(-2px)}
+.ff-hero-secondary:hover{border-color:#d9b877;background:rgba(236,229,211,.08);color:#ece5d3}
+.ff-path-figure img{transition:transform .9s cubic-bezier(.22,.7,.2,1)}
+.ff-path-figure:hover img{transform:scale(1.05)}
+.ff-link-cream:hover{color:#d9b877}
+
+@media(max-width:1040px){
+  .ff-corp{grid-template-columns:minmax(0,1fr) minmax(0,1fr)}
+  .ff-steps{overflow-x:auto;padding-bottom:14px;-webkit-overflow-scrolling:touch}
+  .ff-steps > div{flex:0 0 168px}
+}
+@media(max-width:900px){
+  .ff-hero,.ff-two,.ff-presence,.ff-final{grid-template-columns:minmax(0,1fr)}
+  .ff-depo{grid-template-columns:minmax(0,1fr)}
+  .ff-depo > div + div{border-left:none;border-top:1px solid rgba(217,184,119,.26)}
+}
+@media(max-width:900px){
+  #inicio{min-height:0!important;padding-bottom:calc(min(64svh,540px) + 10px)!important}
+  .ff-hero-bg{top:auto;bottom:0;height:min(64svh,540px);object-position:58% 100%;-webkit-mask-image:linear-gradient(to bottom,transparent 0,#000 14%);mask-image:linear-gradient(to bottom,transparent 0,#000 14%)}
+}
+@media(max-width:760px){
+  .ff-navlink{display:none}
+}
+@media(max-width:720px){
+  .ff-paths,.ff-corp,.ff-contact{grid-template-columns:minmax(0,1fr)}
+}
+@media(prefers-reduced-motion:reduce){
+  *{animation-duration:.001ms!important;animation-iteration-count:1!important;transition-duration:.001ms!important;scroll-behavior:auto!important}
+  [data-reveal]{opacity:1!important;transform:none!important}
+}
+</style>
+</head>
+<body>
+
+<div id="ffprogress"></div>
+
+<nav id="ffnav" style="position:fixed;top:0;left:0;right:0;z-index:60;display:flex;align-items:center;justify-content:space-between;gap:20px;padding:clamp(12px,1.5vw,20px) clamp(18px,3vw,44px);background:rgba(44,53,36,0);backdrop-filter:blur(0px);transition:background .5s,backdrop-filter .5s,box-shadow .5s">
+  <a href="#inicio" style="display:flex;align-items:center;gap:12px;flex:none">
+    <img src="assets/logo-icon.png" alt="Franciele Falconi" width="42" height="42" style="width:clamp(34px,3.2vw,42px);aspect-ratio:1;border-radius:50%;object-fit:cover;display:block">
+  </a>
+  <div class="ff-navlinks">
+    <a href="#caminhos" class="ff-navlink" style="font-size:clamp(10px,.86vw,11.5px);letter-spacing:.16em;color:#d8d2bd;font-weight:500;white-space:nowrap">CAMINHOS</a>
+    <a href="#servico" class="ff-navlink" style="font-size:clamp(10px,.86vw,11.5px);letter-spacing:.16em;color:#d8d2bd;font-weight:500;white-space:nowrap">SERVIÇOS</a>
+    <a href="#metodo" class="ff-navlink" style="font-size:clamp(10px,.86vw,11.5px);letter-spacing:.16em;color:#d8d2bd;font-weight:500;white-space:nowrap">MÉTODO</a>
+    <a href="#sobre" class="ff-navlink" style="font-size:clamp(10px,.86vw,11.5px);letter-spacing:.16em;color:#d8d2bd;font-weight:500;white-space:nowrap">SOBRE</a>
+    <a href="https://wa.me/5548991118771" class="ff-btn-primary" style="font-size:clamp(9.5px,.82vw,11px);letter-spacing:.14em;font-weight:600;white-space:nowrap;color:#3c4a34;background:linear-gradient(135deg,#d9b877,#cb9d50);padding:clamp(9px,1vw,11px) clamp(16px,1.8vw,22px);border-radius:999px">AGENDAR CONVERSA</a>
+  </div>
+</nav>
+
+<header id="inicio" style="position:relative;overflow:hidden;background-color:#29311e;padding:clamp(84px,10vh,124px) 0 clamp(76px,9vh,124px);min-height:100svh;display:flex;align-items:center">
+
+  <svg viewBox="0 0 200 200" aria-hidden="true" style="position:absolute;left:clamp(8px,3vw,46px);top:clamp(150px,22vh,250px);width:clamp(56px,5.4vw,86px);opacity:.16;pointer-events:none;z-index:0">
+    <path d="M100 190 C100 120 100 70 100 12" fill="none" stroke="#d9b877" stroke-width="2.4"></path>
+    <ellipse cx="78" cy="148" rx="24" ry="11" fill="#d9b877" transform="rotate(-26 78 148)"></ellipse>
+    <ellipse cx="122" cy="122" rx="24" ry="11" fill="#d9b877" transform="rotate(26 122 122)"></ellipse>
+    <ellipse cx="78" cy="96" rx="22" ry="10" fill="#d9b877" transform="rotate(-26 78 96)"></ellipse>
+    <ellipse cx="122" cy="70" rx="22" ry="10" fill="#d9b877" transform="rotate(26 122 70)"></ellipse>
+    <ellipse cx="80" cy="44" rx="19" ry="9" fill="#d9b877" transform="rotate(-26 80 44)"></ellipse>
+  </svg>
+
+  <div data-plx="16" style="position:absolute;inset:0;pointer-events:none;z-index:0">
+    <div style="position:absolute;top:-14%;left:-12%;width:min(620px,72vw);aspect-ratio:1;border-radius:50%;background:radial-gradient(circle at 60% 60%,rgba(203,157,80,.14),rgba(203,157,80,0) 66%)"></div>
+    <div style="position:absolute;top:52%;left:4%;width:6px;height:6px;border-radius:50%;background:#cb9d50;box-shadow:0 0 10px 3px rgba(203,157,80,.4);animation:ffPulse 5.5s ease-in-out infinite"></div>
+  </div>
+
+  <picture>
+    <source media="(max-width:900px)" srcset="assets/hero-mobile.jpg">
+    <source media="(max-width:1180px)" srcset="assets/hero-tablet.jpg">
+    <img class="ff-hero-bg" src="assets/hero-desktop.jpg" alt="" aria-hidden="true">
+  </picture>
+
+  <div style="position:relative;z-index:4;width:100%;max-width:1320px;margin:0 auto;padding:0 clamp(24px,4vw,64px)" class="ff-hero">
+    <div>
+      <img src="assets/logo-lockup.png" alt="Franciele Falconi — Desenvolvimento Humano e Saúde Emocional" style="width:clamp(176px,min(19vw,23vh),280px);height:auto;display:block;margin-bottom:clamp(14px,2.4vh,30px)">
+      <div style="font-family:'Cinzel',serif;font-size:clamp(10.5px,min(1.1vw,1.5vh),15px);letter-spacing:.4em;color:#c9a86a;font-weight:600;margin-bottom:clamp(10px,1.4vh,18px)">TERAPEUTA PSICANALISTA</div>
+      <h1 style="margin:0;font-family:'Playfair Display',serif;font-weight:400;line-height:1.06">
+        <span style="display:block;font-size:clamp(28px,min(4.3vw,6.4vh),60px);letter-spacing:-.015em;color:#cb9d50;max-width:9.6em;text-wrap:pretty">Presença, escuta ativa e cuidado genuíno em cada encontro.</span>
+      </h1>
+      <div style="display:flex;align-items:center;gap:clamp(18px,2.6vw,38px);margin:clamp(20px,3.4vh,38px) 0 0;flex-wrap:wrap">
+        <div style="max-width:min(100%,420px)">
+          <div style="width:52px;height:2px;background:#cb9d50;margin:0 0 clamp(14px,2vh,20px)"></div>
+          <span style="display:block;font-family:'Playfair Display',serif;font-weight:300;font-size:clamp(22px,min(3vw,4.4vh),44px);letter-spacing:.24em;line-height:1.3;color:#C8E4B8;max-width:7.6em">METODO FALCONI</span>
+        </div>
+        <div data-plx-scroll="14" style="position:relative;width:clamp(80px,min(9vw,13vh),120px);aspect-ratio:1;flex:none;border-radius:50%;background:rgba(31,38,23,.82);backdrop-filter:blur(2px);display:grid;place-items:center;text-align:center;box-shadow:0 14px 34px rgba(20,26,14,.32)">
+          <svg viewBox="0 0 120 120" aria-hidden="true" style="position:absolute;inset:0;width:100%;height:100%;animation:ffSpin 44s linear infinite">
+            <defs><path id="ffseal" d="M60,60 m-49,0 a49,49 0 1,1 98,0 a49,49 0 1,1 -98,0"></path></defs>
+            <text font-family="Cinzel, serif" font-size="7.6" letter-spacing="2.4" fill="rgba(217,184,119,.55)"><textPath href="#ffseal" startOffset="0">DESENVOLVIMENTO HUMANO · SAÚDE EMOCIONAL · </textPath></text>
+          </svg>
+          <div style="font-family:'Cinzel',serif;font-size:clamp(6.4px,.66vw,8.6px);letter-spacing:.18em;color:#d9b877;line-height:2">ACOLHER<br><span style="color:#8a9478">✦</span><br>COMPREENDER<br><span style="color:#8a9478">✦</span><br>TRANSFORMAR</div>
+        </div>
+      </div>
+      <div style="display:flex;gap:12px;margin-top:clamp(22px,3.2vh,34px);flex-wrap:wrap">
+        <a href="https://wa.me/5548991118771" class="ff-btn-primary" style="font-size:clamp(10.5px,.9vw,12px);letter-spacing:.12em;font-weight:600;white-space:nowrap;color:#3c4a34;background:linear-gradient(135deg,#d9b877,#cb9d50);padding:clamp(13px,1.5vw,16px) clamp(22px,2.6vw,32px);border-radius:999px;transition:transform .3s">AGENDAR UMA CONVERSA</a>
+        <a href="#metodo" class="ff-hero-secondary" style="font-size:clamp(10.5px,.9vw,12px);letter-spacing:.12em;font-weight:500;white-space:nowrap;color:#dcdfd0;border:1px solid rgba(236,229,211,.42);padding:clamp(13px,1.5vw,16px) clamp(22px,2.6vw,32px);border-radius:999px;transition:border-color .3s,background .3s">CONHECER O TRABALHO</a>
+      </div>
+    </div>
+    <div></div>
+  </div>
+
+  <svg viewBox="0 0 1440 150" preserveAspectRatio="none" aria-hidden="true" style="position:absolute;left:0;right:0;bottom:-1px;width:100%;height:clamp(70px,10.5vw,150px);display:block;z-index:2">
+    <path d="M0,150 L0,74 C230,-14 470,-6 720,52 C960,108 1200,120 1440,54 L1440,150 Z" fill="#f1ece1"></path>
+  </svg>
+</header>
+
+<section id="caminhos" style="background:#f1ece1;padding:clamp(20px,3vw,44px) clamp(24px,4vw,56px) clamp(80px,9vw,120px)">
+  <div style="max-width:1220px;margin:0 auto">
+    <div data-reveal="" style="text-align:center;margin-bottom:clamp(44px,5vw,66px)">
+      <div style="display:flex;align-items:center;justify-content:center;gap:16px;margin-bottom:20px">
+        <span style="width:28px;height:1px;background:#cb9d50"></span>
+        <span style="font-family:'Cinzel',serif;font-size:12px;letter-spacing:.34em;color:#8a7a4a">UM TRABALHO, DOIS CAMINHOS</span>
+        <span style="width:28px;height:1px;background:#cb9d50"></span>
+      </div>
+      <h2 style="font-family:'Playfair Display',serif;font-weight:400;font-size:clamp(32px,4.8vw,62px);line-height:1.04;margin:0;color:#3c4a34;text-wrap:balance">Qual caminho <em style="color:#cb9d50">é o seu?</em></h2>
+    </div>
+
+    <div class="ff-paths">
+      <div data-reveal="" style="text-align:center">
+        <h3 style="font-family:'Playfair Display',serif;font-weight:500;font-size:clamp(20px,2.1vw,26px);letter-spacing:.08em;margin:0;color:#3c4a34">PARA VOCÊ</h3>
+        <div style="font-size:12.5px;letter-spacing:.06em;color:#8b8f76;margin:9px 0 24px">Processo individual</div>
+        <div class="ff-path-figure" style="position:relative;overflow:hidden;border-radius:46% 54% 42% 58% / 8% 8% 44% 44%;aspect-ratio:4/3.4;background:#e2dac6;box-shadow:0 24px 50px rgba(47,50,29,.16)">
+          <img src="assets/caminho-individual.jpg" alt="Atendimento individual com Franciele Falconi" style="width:100%;height:100%;object-fit:cover;object-position:50% 30%;display:block">
+        </div>
+        <h4 style="font-family:'Playfair Display',serif;font-weight:400;font-size:clamp(21px,2.3vw,28px);line-height:1.28;margin:30px auto 0;max-width:420px;color:#3c4a34;text-wrap:pretty">Você sente que perdeu a conexão consigo mesma?</h4>
+        <p style="font-size:14.5px;line-height:1.85;color:#6b7059;font-weight:300;margin:14px auto 0;max-width:400px;text-wrap:pretty">Sobrecarga emocional, relações que cansam mais do que nutrem. Talvez seja hora de olhar para dentro — com apoio.</p>
+        <a href="https://wa.me/5548991118771" style="display:inline-flex;align-items:center;gap:10px;margin-top:22px;font-size:11.5px;letter-spacing:.16em;font-weight:600;color:#8a6a2f;border-bottom:1px solid #cb9d50;padding-bottom:6px">QUERO CUIDAR DE MIM <span aria-hidden="true">→</span></a>
+      </div>
+
+      <div data-reveal="" style="text-align:center">
+        <h3 style="font-family:'Playfair Display',serif;font-weight:500;font-size:clamp(20px,2.1vw,26px);letter-spacing:.08em;margin:0;color:#3c4a34">PARA SUA EMPRESA</h3>
+        <div style="font-size:12.5px;letter-spacing:.06em;color:#8b8f76;margin:9px 0 24px">Equipes e lideranças</div>
+        <div class="ff-path-figure" style="position:relative;overflow:hidden;border-radius:54% 46% 58% 42% / 8% 8% 44% 44%;aspect-ratio:4/3.4;background:#e2dac6;box-shadow:0 24px 50px rgba(47,50,29,.16)">
+          <img src="assets/caminho-empresa.jpeg" alt="Franciele Falconi em trabalho com empresas" style="width:100%;height:100%;object-fit:cover;object-position:50% 32%;display:block">
+        </div>
+        <h4 style="font-family:'Playfair Display',serif;font-weight:400;font-size:clamp(21px,2.3vw,28px);line-height:1.28;margin:30px auto 0;max-width:420px;color:#3c4a34;text-wrap:pretty">Sua equipe está esgotada, e a liderança não sabe por quê?</h4>
+        <p style="font-size:14.5px;line-height:1.85;color:#6b7059;font-weight:300;margin:14px auto 0;max-width:400px;text-wrap:pretty">Conflitos e lideranças despreparadas para o lado humano da gestão custam caro. Existe um caminho estruturado para mudar isso.</p>
+        <a href="https://wa.me/5548991118771" style="display:inline-flex;align-items:center;gap:10px;margin-top:22px;font-size:11.5px;letter-spacing:.16em;font-weight:600;color:#8a6a2f;border-bottom:1px solid #cb9d50;padding-bottom:6px">FALAR SOBRE MINHA EMPRESA <span aria-hidden="true">→</span></a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="depoimentos" style="position:relative;background:#f1ece1;padding:0 clamp(16px,3vw,44px) clamp(70px,8vw,100px)">
+  <svg viewBox="0 0 200 200" aria-hidden="true" style="position:absolute;left:clamp(-30px,-1vw,0px);top:8%;width:clamp(80px,8vw,120px);opacity:.22;pointer-events:none">
+    <path d="M12 100 C70 100 130 100 190 100" fill="none" stroke="#3c4a34" stroke-width="2.4"></path>
+    <ellipse cx="52" cy="78" rx="24" ry="11" fill="#3c4a34" transform="rotate(-24 52 78)"></ellipse>
+    <ellipse cx="86" cy="122" rx="24" ry="11" fill="#3c4a34" transform="rotate(24 86 122)"></ellipse>
+    <ellipse cx="118" cy="78" rx="22" ry="10" fill="#3c4a34" transform="rotate(-24 118 78)"></ellipse>
+    <ellipse cx="150" cy="120" rx="20" ry="9" fill="#3c4a34" transform="rotate(24 150 120)"></ellipse>
+  </svg>
+  <div data-reveal="" style="position:relative;max-width:1180px;margin:0 auto;background:#3c4a34;border-radius:44% 56% 52% 48% / 22% 22% 26% 26%;padding:clamp(56px,6vw,84px) clamp(30px,4.5vw,74px)">
+    <div style="text-align:center;margin-bottom:clamp(38px,4vw,52px)">
+      <span style="font-size:11px;letter-spacing:.3em;color:#d9b877;font-weight:600">QUEM JÁ PERCORREU ESSE CAMINHO</span>
+    </div>
+    <div class="ff-depo">
+      <div style="padding:8px clamp(18px,2.4vw,34px);display:flex;gap:18px;align-items:flex-start">
+        <div style="width:56px;height:56px;flex:none;border-radius:50%;background:rgba(236,229,211,.1);box-shadow:0 0 0 1px rgba(217,184,119,.4);color:#d9b877;display:grid;place-items:center;font-family:'Playfair Display',serif;font-size:20px">A</div>
+        <div>
+          <p style="font-size:14.5px;line-height:1.8;color:#e4e6d8;font-weight:300;margin:0 0 16px;text-wrap:pretty">Texto do depoimento — envie os depoimentos reais e eu substituo.</p>
+          <div style="font-size:11px;letter-spacing:.14em;color:#d9b877;font-weight:600">— NOME DO CLIENTE</div>
+          <div style="font-size:10.5px;letter-spacing:.14em;color:#9aa38c;margin-top:5px">PROCESSO INDIVIDUAL</div>
+        </div>
+      </div>
+      <div style="padding:8px clamp(18px,2.4vw,34px);display:flex;gap:18px;align-items:flex-start">
+        <div style="width:56px;height:56px;flex:none;border-radius:50%;background:rgba(236,229,211,.1);box-shadow:0 0 0 1px rgba(217,184,119,.4);color:#d9b877;display:grid;place-items:center;font-family:'Playfair Display',serif;font-size:20px">M</div>
+        <div>
+          <p style="font-size:14.5px;line-height:1.8;color:#e4e6d8;font-weight:300;margin:0 0 16px;text-wrap:pretty">Texto do depoimento — envie os depoimentos reais e eu substituo.</p>
+          <div style="font-size:11px;letter-spacing:.14em;color:#d9b877;font-weight:600">— NOME DO CLIENTE</div>
+          <div style="font-size:10.5px;letter-spacing:.14em;color:#9aa38c;margin-top:5px">WORKSHOP</div>
+        </div>
+      </div>
+      <div style="padding:8px clamp(18px,2.4vw,34px);display:flex;gap:18px;align-items:flex-start">
+        <div style="width:56px;height:56px;flex:none;border-radius:50%;background:rgba(236,229,211,.1);box-shadow:0 0 0 1px rgba(217,184,119,.4);color:#d9b877;display:grid;place-items:center;font-family:'Playfair Display',serif;font-size:20px">R</div>
+        <div>
+          <p style="font-size:14.5px;line-height:1.8;color:#e4e6d8;font-weight:300;margin:0 0 16px;text-wrap:pretty">Texto do depoimento — envie os depoimentos reais e eu substituo.</p>
+          <div style="font-size:11px;letter-spacing:.14em;color:#d9b877;font-weight:600">— NOME DO CLIENTE</div>
+          <div style="font-size:10.5px;letter-spacing:.14em;color:#9aa38c;margin-top:5px">PROGRAMA IN COMPANY</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="servico" style="background:#f1ece1;padding:clamp(30px,4vw,50px) clamp(24px,4vw,56px) clamp(80px,9vw,120px)">
+  <div style="max-width:1220px;margin:0 auto">
+    <div class="ff-two">
+      <div>
+        <div data-reveal="">
+          <div style="display:flex;align-items:center;gap:14px;margin-bottom:18px">
+            <span style="width:24px;height:1px;background:#cb9d50"></span>
+            <span style="font-family:'Cinzel',serif;font-size:11.5px;letter-spacing:.32em;color:#8a7a4a">SERVIÇO EM DESTAQUE</span>
+          </div>
+          <h2 style="font-family:'Playfair Display',serif;font-weight:400;font-size:clamp(27px,3.1vw,40px);line-height:1.12;margin:0 0 18px;color:#3c4a34;text-wrap:balance">Processo Terapêutico Individual</h2>
+          <p style="font-size:15px;line-height:1.85;color:#5f6344;font-weight:300;margin:0 0 34px;text-wrap:pretty">O Método Falconi em profundidade: um espaço para compreender a raiz do que se repete, com foco em consciência emocional, limites mais saudáveis e transformação real — não apenas alívio do sintoma.</p>
+        </div>
+        <div style="display:flex;flex-direction:column;gap:26px">
+          <div data-reveal="" style="display:flex;gap:18px;align-items:flex-start">
+            <div style="width:44px;height:44px;flex:none;border-radius:50%;background:#cb9d50;display:grid;place-items:center">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#f6f1e4" stroke-width="1.5" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="8.4"></circle><path d="M12 3.6v16.8M3.6 12h16.8"></path></svg>
+            </div>
+            <div>
+              <h3 style="font-size:12.5px;letter-spacing:.13em;font-weight:600;margin:11px 0 8px;color:#3c4a34">ANÁLISE INTEGRATIVA</h3>
+              <p style="font-size:14px;line-height:1.75;color:#6b7059;font-weight:300;margin:0;text-wrap:pretty">Leitura da história emocional e dos padrões que se repetem.</p>
+            </div>
+          </div>
+          <div data-reveal="" style="display:flex;gap:18px;align-items:flex-start">
+            <div style="width:44px;height:44px;flex:none;border-radius:50%;background:#cb9d50;display:grid;place-items:center">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#f6f1e4" stroke-width="1.5" stroke-linecap="round" aria-hidden="true"><path d="M4 15c2.4-3.6 5-5.4 8-5.4s5.6 1.8 8 5.4"></path><circle cx="12" cy="15" r="2.4"></circle></svg>
+            </div>
+            <div>
+              <h3 style="font-size:12.5px;letter-spacing:.13em;font-weight:600;margin:11px 0 8px;color:#3c4a34">HIPNOTERAPIA</h3>
+              <p style="font-size:14px;line-height:1.75;color:#6b7059;font-weight:300;margin:0;text-wrap:pretty">Acesso ao material inconsciente que sustenta o sofrimento.</p>
+            </div>
+          </div>
+          <div data-reveal="" style="display:flex;gap:18px;align-items:flex-start">
+            <div style="width:44px;height:44px;flex:none;border-radius:50%;background:#cb9d50;display:grid;place-items:center">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#f6f1e4" stroke-width="1.5" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="6" r="2.4"></circle><circle cx="6" cy="17" r="2.4"></circle><circle cx="18" cy="17" r="2.4"></circle><path d="M12 8.4v3.2M10.4 13.2 7.6 15M13.6 13.2 16.4 15"></path></svg>
+            </div>
+            <div>
+              <h3 style="font-size:12.5px;letter-spacing:.13em;font-weight:600;margin:11px 0 8px;color:#3c4a34">CONSTELAÇÃO FAMILIAR</h3>
+              <p style="font-size:14px;line-height:1.75;color:#6b7059;font-weight:300;margin:0;text-wrap:pretty">Individual ou em grupo, para compreender heranças e vínculos.</p>
+            </div>
+          </div>
+          <div data-reveal="" style="display:flex;gap:18px;align-items:flex-start">
+            <div style="width:44px;height:44px;flex:none;border-radius:50%;background:#cb9d50;display:grid;place-items:center">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#f6f1e4" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 20s-6.6-4.2-6.6-8.8A3.9 3.9 0 0 1 12 8.6a3.9 3.9 0 0 1 6.6 2.6C18.6 15.8 12 20 12 20z"></path></svg>
+            </div>
+            <div>
+              <h3 style="font-size:12.5px;letter-spacing:.13em;font-weight:600;margin:11px 0 8px;color:#3c4a34">REIKI E BARRAS DE ACCESS</h3>
+              <p style="font-size:14px;line-height:1.75;color:#6b7059;font-weight:300;margin:0;text-wrap:pretty">Apoio energético para aliviar tensão e reorganizar o corpo.</p>
+            </div>
+          </div>
+        </div>
+        <a href="https://wa.me/5548991118771" class="ff-btn-primary" data-reveal="" style="display:inline-block;margin-top:38px;font-size:12px;letter-spacing:.12em;font-weight:600;white-space:nowrap;color:#3c4a34;background:linear-gradient(135deg,#d9b877,#cb9d50);padding:15px 30px;border-radius:999px;transition:transform .3s">QUERO COMEÇAR</a>
+      </div>
+
+      <div id="metodo">
+        <div data-reveal="" style="text-align:center;margin-bottom:clamp(34px,4vw,50px)">
+          <div style="display:flex;align-items:center;justify-content:center;gap:16px;margin-bottom:18px">
+            <span style="width:26px;height:1px;background:#cb9d50"></span>
+            <span style="font-family:'Cinzel',serif;font-size:11.5px;letter-spacing:.32em;color:#8a7a4a">MÉTODO FALCONI</span>
+            <span style="width:26px;height:1px;background:#cb9d50"></span>
+          </div>
+          <h2 style="font-family:'Playfair Display',serif;font-weight:400;font-size:clamp(27px,3.3vw,44px);line-height:1.08;margin:0;color:#3c4a34;text-wrap:balance">Cinco movimentos, <em style="color:#cb9d50">uma transformação</em></h2>
+        </div>
+
+        <div class="ff-steps" data-reveal="">
+          <div style="text-align:center">
+            <div style="width:clamp(58px,6vw,74px);aspect-ratio:1;margin:0 auto 16px;border-radius:50%;background:#e9e2d0;display:grid;place-items:center">
+              <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#8a7a4a" stroke-width="1.4" stroke-linecap="round" aria-hidden="true"><circle cx="10.6" cy="10.6" r="6.2"></circle><path d="M15.4 15.4 20 20"></path></svg>
+            </div>
+            <div style="font-family:'Playfair Display',serif;font-size:15px;color:#a79c7c;margin-bottom:8px">01</div>
+            <h3 style="font-family:'Cinzel',serif;font-size:11.5px;letter-spacing:.16em;color:#3c4a34;margin:0 0 10px">CONSCIÊNCIA</h3>
+            <p style="font-size:13px;line-height:1.75;color:#6b7059;font-weight:300;margin:0;text-wrap:pretty">Entender onde você está e por quê.</p>
+          </div>
+          <div class="ff-arrow" aria-hidden="true">→</div>
+          <div style="text-align:center">
+            <div style="width:clamp(58px,6vw,74px);aspect-ratio:1;margin:0 auto 16px;border-radius:50%;background:#e9e2d0;display:grid;place-items:center">
+              <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#8a7a4a" stroke-width="1.4" stroke-linecap="round" aria-hidden="true"><path d="M12 21v-7"></path><path d="M12 14c-3.4 0-5.6-2-5.6-5.2C6.4 5.6 8.6 3.4 12 3.4s5.6 2.2 5.6 5.4C17.6 12 15.4 14 12 14z"></path><path d="M9 18.4c-1.8.4-3 1.2-3 2.6M15 18.4c1.8.4 3 1.2 3 2.6"></path></svg>
+            </div>
+            <div style="font-family:'Playfair Display',serif;font-size:15px;color:#a79c7c;margin-bottom:8px">02</div>
+            <h3 style="font-family:'Cinzel',serif;font-size:11.5px;letter-spacing:.16em;color:#3c4a34;margin:0 0 10px">RAIZ</h3>
+            <p style="font-size:13px;line-height:1.75;color:#6b7059;font-weight:300;margin:0;text-wrap:pretty">A origem dos padrões que se repetem.</p>
+          </div>
+          <div class="ff-arrow" aria-hidden="true">→</div>
+          <div style="text-align:center">
+            <div style="width:clamp(58px,6vw,74px);aspect-ratio:1;margin:0 auto 16px;border-radius:50%;background:#e9e2d0;display:grid;place-items:center">
+              <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#8a7a4a" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5.5 19.5c-1.4-3.4.4-8 4-10.6C12 7 15 6.4 18.5 6.6c.6 3.6-.2 7-2.6 9.6-2.6 2.8-7 3.8-10.4 3.3z"></path><path d="M8 17c2-3.4 4.6-5.8 8-7.4"></path></svg>
+            </div>
+            <div style="font-family:'Playfair Display',serif;font-size:15px;color:#a79c7c;margin-bottom:8px">03</div>
+            <h3 style="font-family:'Cinzel',serif;font-size:11.5px;letter-spacing:.16em;color:#3c4a34;margin:0 0 10px">RESSIGNIFICAÇÃO</h3>
+            <p style="font-size:13px;line-height:1.75;color:#6b7059;font-weight:300;margin:0;text-wrap:pretty">Liberar o peso emocional que os sustenta.</p>
+          </div>
+          <div class="ff-arrow" aria-hidden="true">→</div>
+          <div style="text-align:center">
+            <div style="width:clamp(58px,6vw,74px);aspect-ratio:1;margin:0 auto 16px;border-radius:50%;background:#e9e2d0;display:grid;place-items:center">
+              <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#8a7a4a" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 20h16"></path><path d="M6.5 20V11l5.5-4.4L17.5 11v9"></path><path d="M10.4 20v-4.6h3.2V20"></path></svg>
+            </div>
+            <div style="font-family:'Playfair Display',serif;font-size:15px;color:#a79c7c;margin-bottom:8px">04</div>
+            <h3 style="font-family:'Cinzel',serif;font-size:11.5px;letter-spacing:.16em;color:#3c4a34;margin:0 0 10px">RECONSTRUÇÃO</h3>
+            <p style="font-size:13px;line-height:1.75;color:#6b7059;font-weight:300;margin:0;text-wrap:pretty">Novos comportamentos, limites e identidade.</p>
+          </div>
+          <div class="ff-arrow" aria-hidden="true">→</div>
+          <div style="text-align:center">
+            <div style="width:clamp(58px,6vw,74px);aspect-ratio:1;margin:0 auto 16px;border-radius:50%;background:#cb9d50;display:grid;place-items:center">
+              <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#f6f1e4" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="8.4"></circle><path d="M8.2 12.4l2.6 2.6 5-5.4"></path></svg>
+            </div>
+            <div style="font-family:'Playfair Display',serif;font-size:15px;color:#a79c7c;margin-bottom:8px">05</div>
+            <h3 style="font-family:'Cinzel',serif;font-size:11.5px;letter-spacing:.16em;color:#3c4a34;margin:0 0 10px">INTEGRAÇÃO</h3>
+            <p style="font-size:13px;line-height:1.75;color:#6b7059;font-weight:300;margin:0;text-wrap:pretty">Consolidar a mudança no dia a dia.</p>
+          </div>
+        </div>
+
+        <p data-reveal="" style="margin:clamp(34px,4vw,48px) 0 0;font-size:14.5px;line-height:1.85;color:#6b7059;font-weight:300;max-width:620px;text-wrap:pretty">Todo processo começa com um mapeamento emocional que identifica os padrões que mais pesam na sua vida hoje. A partir dele, construímos juntas um plano genuinamente seu — não um roteiro pronto.</p>
+        <div data-reveal="" style="font-family:'Petit Formal Script',cursive;font-size:clamp(22px,2.3vw,30px);line-height:1.4;color:#8a7a4a;text-align:right;margin-top:clamp(26px,3vw,40px)">Não é uma fórmula genérica,<br>é um caminho</div>
+      </div>
+    </div>
+
+    <div data-reveal="" style="margin-top:clamp(76px,8vw,110px);text-align:center">
+      <div style="display:flex;align-items:center;justify-content:center;gap:16px;margin-bottom:18px">
+        <span style="width:26px;height:1px;background:#cb9d50"></span>
+        <span style="font-family:'Cinzel',serif;font-size:11.5px;letter-spacing:.32em;color:#8a7a4a">PARA EMPRESAS</span>
+        <span style="width:26px;height:1px;background:#cb9d50"></span>
+      </div>
+      <h2 style="font-family:'Playfair Display',serif;font-weight:400;font-size:clamp(26px,3.1vw,40px);line-height:1.12;margin:0 0 clamp(42px,4.5vw,60px);color:#3c4a34;text-wrap:balance">Saúde emocional como cultura</h2>
+    </div>
+    <div class="ff-corp">
+      <div data-reveal="" style="display:flex;gap:18px;align-items:flex-start">
+        <div style="width:44px;height:44px;flex:none;border-radius:50%;border:1px solid #cb9d50;display:grid;place-items:center">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#8a7a4a" stroke-width="1.4" stroke-linecap="round" aria-hidden="true"><circle cx="9" cy="8" r="3"></circle><circle cx="17" cy="9" r="2.2"></circle><path d="M3.5 19c0-3 2.5-5 5.5-5s5.5 2 5.5 5"></path><path d="M16 14.5c2.4.3 4.2 2.1 4.2 4.5"></path></svg>
+        </div>
+        <div>
+          <h3 style="font-family:'Playfair Display',serif;font-weight:500;font-size:18px;margin:8px 0 9px;color:#3c4a34">Palestras</h3>
+          <p style="font-size:14px;line-height:1.75;color:#6b7059;font-weight:300;margin:0;text-wrap:pretty">Encontros inspiradores sobre bem-estar emocional, saúde mental e qualidade das relações no ambiente de trabalho.</p>
+        </div>
+      </div>
+      <div data-reveal="" style="display:flex;gap:18px;align-items:flex-start">
+        <div style="width:44px;height:44px;flex:none;border-radius:50%;border:1px solid #cb9d50;display:grid;place-items:center">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#8a7a4a" stroke-width="1.4" stroke-linecap="round" aria-hidden="true"><rect x="3" y="4.5" width="18" height="12" rx="1.6"></rect><path d="M9 20h6"></path><path d="M12 16.5V20"></path></svg>
+        </div>
+        <div>
+          <h3 style="font-family:'Playfair Display',serif;font-weight:500;font-size:18px;margin:8px 0 9px;color:#3c4a34">Workshops</h3>
+          <p style="font-size:14px;line-height:1.75;color:#6b7059;font-weight:300;margin:0;text-wrap:pretty">Práticas vivenciais e reflexivas que convidam à ação, à consciência e ao desenvolvimento humano dentro das equipes.</p>
+        </div>
+      </div>
+      <div data-reveal="" style="display:flex;gap:18px;align-items:flex-start">
+        <div style="width:44px;height:44px;flex:none;border-radius:50%;border:1px solid #cb9d50;display:grid;place-items:center">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#8a7a4a" stroke-width="1.4" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="8.5"></circle><path d="M9 14.2c.8.9 1.8 1.3 3 1.3s2.2-.4 3-1.3"></path><path d="M9.2 9.6h.01M14.8 9.6h.01"></path></svg>
+        </div>
+        <div>
+          <h3 style="font-family:'Playfair Display',serif;font-weight:500;font-size:18px;margin:8px 0 9px;color:#3c4a34">Rodas de Conversa</h3>
+          <p style="font-size:14px;line-height:1.75;color:#6b7059;font-weight:300;margin:0;text-wrap:pretty">Espaços seguros de escuta ativa e troca entre colaboradores, fortalecendo vínculos e a cultura de cuidado mútuo.</p>
+        </div>
+      </div>
+      <div data-reveal="" style="display:flex;gap:18px;align-items:flex-start">
+        <div style="width:44px;height:44px;flex:none;border-radius:50%;border:1px solid #cb9d50;display:grid;place-items:center">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#8a7a4a" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 12.5h3.5l2-5 3 9.5 2.5-6 1.8 3.5H21"></path></svg>
+        </div>
+        <div>
+          <h3 style="font-family:'Playfair Display',serif;font-weight:500;font-size:18px;margin:8px 0 9px;color:#3c4a34">Vivências para Equipes</h3>
+          <p style="font-size:14px;line-height:1.75;color:#6b7059;font-weight:300;margin:0;text-wrap:pretty">Experiências terapêuticas coletivas focadas em reconexão, presença e fortalecimento das relações profissionais.</p>
+        </div>
+      </div>
+      <div data-reveal="" style="display:flex;gap:18px;align-items:flex-start">
+        <div style="width:44px;height:44px;flex:none;border-radius:50%;border:1px solid #cb9d50;display:grid;place-items:center">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#8a7a4a" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 20s-7-4.4-7-9.2A4.1 4.1 0 0 1 12 8.3a4.1 4.1 0 0 1 7 2.5C19 15.6 12 20 12 20z"></path></svg>
+        </div>
+        <div>
+          <h3 style="font-family:'Playfair Display',serif;font-weight:500;font-size:18px;margin:8px 0 9px;color:#3c4a34">Saúde Emocional no Trabalho</h3>
+          <p style="font-size:14px;line-height:1.75;color:#6b7059;font-weight:300;margin:0;text-wrap:pretty">Programas de cuidado emocional que contribuem para um clima organizacional mais saudável e produtivo.</p>
+        </div>
+      </div>
+      <div data-reveal="" style="display:flex;gap:18px;align-items:flex-start">
+        <div style="width:44px;height:44px;flex:none;border-radius:50%;border:1px solid #cb9d50;display:grid;place-items:center">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#8a7a4a" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20.5 12.4c0 3.7-3.8 6.7-8.5 6.7-1 0-2-.1-2.9-.4L4.5 20.5l1.3-3.4c-1.4-1.2-2.3-2.8-2.3-4.7C3.5 8.7 7.3 5.7 12 5.7s8.5 3 8.5 6.7z"></path></svg>
+        </div>
+        <div>
+          <h3 style="font-family:'Playfair Display',serif;font-weight:500;font-size:18px;margin:8px 0 9px;color:#3c4a34">Comunicação e Relações Saudáveis</h3>
+          <p style="font-size:14px;line-height:1.75;color:#6b7059;font-weight:300;margin:0;text-wrap:pretty">Práticas que desenvolvem escuta, empatia e qualidade nas trocas interpessoais dentro das organizações.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="sobre" style="position:relative;background:#e7e0cf;padding:clamp(80px,9vw,120px) clamp(24px,4vw,56px)">
+  <div style="max-width:1220px;margin:0 auto" class="ff-presence">
+    <div data-reveal="" style="position:relative">
+      <div data-plx-scroll="16" style="position:absolute;left:8%;right:-6%;top:-5%;bottom:9%;border-radius:52% 48% 44% 56% / 46% 46% 54% 54%;border:1px solid #cb9d50;pointer-events:none"></div>
+      <div style="position:relative;overflow:hidden;border-radius:48% 52% 46% 54% / 44% 44% 56% 56%;aspect-ratio:5/5.2;background:#d8d0b8;box-shadow:0 28px 60px rgba(47,50,29,.18)">
+        <img src="assets/sobre-principal.jpeg" alt="Franciele Falconi em palestra" style="width:100%;height:100%;object-fit:cover;object-position:50% 26%;display:block">
+      </div>
+      <div data-plx-scroll="-12" style="position:absolute;left:-2%;bottom:2%;width:clamp(112px,13vw,156px);aspect-ratio:1;border-radius:50%;overflow:hidden;box-shadow:0 0 0 6px #e7e0cf,0 16px 36px rgba(47,50,29,.26)">
+        <img src="assets/sobre-palco.jpeg" alt="Franciele Falconi conduzindo encontro" style="width:100%;height:100%;object-fit:cover;object-position:55% 26%;display:block">
+      </div>
+    </div>
+    <div data-reveal="">
+      <div style="display:flex;align-items:center;gap:14px;margin-bottom:20px">
+        <span style="width:24px;height:1px;background:#cb9d50"></span>
+        <span style="font-family:'Cinzel',serif;font-size:11.5px;letter-spacing:.32em;color:#8a7a4a">SOBRE</span>
+      </div>
+      <h2 style="font-family:'Playfair Display',serif;font-weight:400;font-size:clamp(28px,3.6vw,48px);line-height:1.12;margin:0 0 14px;color:#3c4a34;text-wrap:balance">Presença, escuta ativa e cuidado genuíno em cada encontro.</h2>
+      <div style="font-family:'Petit Formal Script',cursive;font-size:clamp(22px,2.3vw,30px);color:#8a7a4a;margin:0 0 28px">antes da técnica, a pessoa</div>
+      <p style="font-size:15.5px;line-height:1.9;color:#4d5138;font-weight:300;margin:0 0 20px;text-wrap:pretty">Minha atuação une neurociência, psicanálise e abordagem sistêmica a ferramentas de desenvolvimento emocional. Acredito que ansiedade, exaustão e conflitos nas relações não surgem por acaso — são reflexos de histórias, padrões inconscientes e dinâmicas relacionais que precisam ser compreendidos para que a mudança aconteça de forma verdadeira.</p>
+      <p style="font-size:15.5px;line-height:1.9;color:#4d5138;font-weight:300;margin:0 0 30px;text-wrap:pretty">Cada processo começa com presença e escuta ativa: antes de qualquer técnica, é preciso compreender a pessoa (ou a equipe) que está à minha frente, com cuidado genuíno pelo caminho que ela está percorrendo.</p>
+      <div style="display:flex;gap:9px;flex-wrap:wrap;margin-bottom:32px">
+        <span style="font-size:10.5px;letter-spacing:.14em;color:#5f6344;border:1px solid #bcb298;padding:9px 16px;border-radius:999px;font-weight:500">NEUROCIÊNCIA</span>
+        <span style="font-size:10.5px;letter-spacing:.14em;color:#5f6344;border:1px solid #bcb298;padding:9px 16px;border-radius:999px;font-weight:500">PSICANÁLISE</span>
+        <span style="font-size:10.5px;letter-spacing:.14em;color:#5f6344;border:1px solid #bcb298;padding:9px 16px;border-radius:999px;font-weight:500">ABORDAGEM SISTÊMICA</span>
+        <span style="font-size:10.5px;letter-spacing:.14em;color:#5f6344;border:1px solid #bcb298;padding:9px 16px;border-radius:999px;font-weight:500">DESENVOLVIMENTO EMOCIONAL</span>
+      </div>
+      <a href="https://wa.me/5548991118771" style="display:inline-flex;align-items:center;gap:10px;font-size:11.5px;letter-spacing:.16em;font-weight:600;color:#8a6a2f;border-bottom:1px solid #cb9d50;padding-bottom:6px">AGENDAR UMA CONVERSA <span aria-hidden="true">→</span></a>
+    </div>
+  </div>
+</section>
+
+<section id="conversar" style="position:relative;overflow:hidden;background:#3c4a34;padding:0 clamp(24px,4vw,56px) clamp(90px,10vw,130px)">
+  <svg viewBox="0 0 1440 120" preserveAspectRatio="none" aria-hidden="true" style="position:absolute;left:0;right:0;top:-1px;width:100%;height:clamp(56px,7.5vw,110px);display:block;pointer-events:none">
+    <path d="M0,0 L0,58 C250,124 520,116 760,68 C990,22 1210,16 1440,60 L1440,0 Z" fill="#e7e0cf"></path>
+  </svg>
+  <div data-plx-scroll="18" style="position:absolute;left:6%;bottom:-12%;width:min(320px,42vw);aspect-ratio:1;border-radius:50%;background:radial-gradient(circle at 40% 40%,rgba(203,157,80,.16),rgba(203,157,80,0) 70%);pointer-events:none"></div>
+
+  <div style="position:relative;max-width:1180px;margin:0 auto;padding-top:clamp(96px,11vw,150px)" class="ff-final">
+    <div data-reveal="">
+      <h2 style="font-family:'Playfair Display',serif;font-weight:400;font-size:clamp(30px,4.2vw,56px);line-height:1.06;margin:0 0 16px;color:#ece5d3;text-wrap:balance">Vamos começar <em style="color:#d9b877">essa conversa?</em></h2>
+      <div style="font-family:'Petit Formal Script',cursive;font-size:clamp(22px,2.4vw,30px);color:#d9b877;margin:0 0 24px">sem compromisso, com acolhimento</div>
+      <p style="font-size:15.5px;line-height:1.9;color:#c6c9b6;font-weight:300;margin:0 0 34px;max-width:460px;text-wrap:pretty">O primeiro passo é entender onde você está e o que faz sentido a partir daqui. Escolha o caminho mais confortável para você.</p>
+      <a href="https://wa.me/5548991118771" class="ff-btn-primary" style="display:inline-block;font-size:12px;letter-spacing:.12em;font-weight:600;white-space:nowrap;color:#3c4a34;background:linear-gradient(135deg,#d9b877,#cb9d50);padding:17px 36px;border-radius:999px;transition:transform .3s;margin-bottom:44px">AGENDAR PELO WHATSAPP</a>
+      <div class="ff-contact" style="padding-top:32px;border-top:1px solid rgba(217,184,119,.24)">
+        <a href="https://wa.me/5548991118771" class="ff-link-cream" style="display:flex;align-items:center;gap:14px;color:#ece5d3">
+          <span style="width:38px;height:38px;flex:none;border-radius:50%;border:1px solid rgba(217,184,119,.45);display:grid;place-items:center">
+            <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="#d9b877" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20.5 12.4c0 3.7-3.8 6.7-8.5 6.7-1 0-2-.1-2.9-.4L4.5 20.5l1.3-3.4c-1.4-1.2-2.3-2.8-2.3-4.7C3.5 8.7 7.3 5.7 12 5.7s8.5 3 8.5 6.7z"></path></svg>
+          </span>
+          <span style="font-size:14px">+55 48 99111-8771</span>
+        </a>
+        <a href="mailto:contato@francielefalconi.com.br" class="ff-link-cream" style="display:flex;align-items:center;gap:14px;color:#ece5d3">
+          <span style="width:38px;height:38px;flex:none;border-radius:50%;border:1px solid rgba(217,184,119,.45);display:grid;place-items:center">
+            <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="#d9b877" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5.5" width="18" height="13" rx="1.6"></rect><path d="m3.6 6.4 8.4 6.2 8.4-6.2"></path></svg>
+          </span>
+          <span style="font-size:13.5px">contato@francielefalconi.com.br</span>
+        </a>
+        <a href="https://instagram.com/francielefalconi.terapeuta" class="ff-link-cream" style="display:flex;align-items:center;gap:14px;color:#ece5d3" target="_blank" rel="noopener">
+          <span style="width:38px;height:38px;flex:none;border-radius:50%;border:1px solid rgba(217,184,119,.45);display:grid;place-items:center">
+            <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="#d9b877" stroke-width="1.5" stroke-linecap="round" aria-hidden="true"><rect x="4" y="4" width="16" height="16" rx="4.6"></rect><circle cx="12" cy="12" r="3.6"></circle><path d="M16.8 7.4h.01"></path></svg>
+          </span>
+          <span style="font-size:13.5px">@francielefalconi.terapeuta</span>
+        </a>
+        <div style="display:flex;align-items:center;gap:14px;color:#ece5d3">
+          <span style="width:38px;height:38px;flex:none;border-radius:50%;border:1px solid rgba(217,184,119,.45);display:grid;place-items:center">
+            <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="#d9b877" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 21s-6.4-5.4-6.4-10.2A6.4 6.4 0 0 1 18.4 10.8C18.4 15.6 12 21 12 21z"></path><circle cx="12" cy="10.6" r="2.4"></circle></svg>
+          </span>
+          <span style="font-size:13.5px">Atendimento online e presencial</span>
+        </div>
+      </div>
+    </div>
+
+    <div data-reveal="" style="position:relative;display:flex;justify-content:center">
+      <div style="position:relative;width:min(100%,360px);aspect-ratio:1;border-radius:46% 54% 50% 50% / 50% 46% 54% 50%;overflow:hidden;box-shadow:0 26px 60px rgba(20,26,15,.34)">
+        <img src="assets/conversar.jpeg" alt="Franciele Falconi em palestra" style="width:100%;height:100%;object-fit:cover;object-position:50% 42%;display:block">
+      </div>
+      <div data-plx-scroll="-14" style="position:absolute;left:-2%;bottom:-8%;width:clamp(100px,11vw,128px);aspect-ratio:1;border-radius:50%;background:#3c4a34;box-shadow:0 0 0 1px rgba(217,184,119,.45),0 14px 30px rgba(20,26,15,.3);display:grid;place-items:center">
+        <svg viewBox="0 0 120 120" aria-hidden="true" style="position:absolute;inset:0;width:100%;height:100%;animation:ffSpin 40s linear infinite">
+          <defs><path id="ffseal2" d="M60,60 m-45,0 a45,45 0 1,1 90,0 a45,45 0 1,1 -90,0"></path></defs>
+          <text font-family="Cinzel, serif" font-size="8.6" letter-spacing="3" fill="rgba(217,184,119,.7)"><textPath href="#ffseal2" startOffset="0">RAÍZES · CONSCIÊNCIA · EQUILÍBRIO · </textPath></text>
+        </svg>
+        <img src="assets/logo-icon.png" alt="" aria-hidden="true" style="width:52px;height:52px;border-radius:50%;object-fit:cover">
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer style="background:#2b3524;padding:40px clamp(24px,4vw,56px);display:flex;align-items:center;justify-content:space-between;gap:24px;flex-wrap:wrap">
+  <div style="display:flex;align-items:center;gap:14px">
+    <img src="assets/logo-icon.png" alt="" aria-hidden="true" style="width:38px;height:38px;border-radius:50%">
+    <div>
+      <div style="font-family:'Cinzel',serif;font-size:13px;letter-spacing:.14em;color:#ece5d3">FRANCIELE FALCONI</div>
+      <div style="font-size:10.5px;letter-spacing:.14em;color:#8d8a6e;margin-top:3px">DESENVOLVIMENTO HUMANO &amp; SAÚDE EMOCIONAL</div>
+    </div>
+  </div>
+  <div style="display:flex;gap:26px;flex-wrap:wrap">
+    <a href="https://instagram.com/francielefalconi.terapeuta" class="ff-link-cream" style="font-size:12.5px;color:#c6c0a8" target="_blank" rel="noopener">@francielefalconi.terapeuta</a>
+    <a href="mailto:contato@francielefalconi.com.br" class="ff-link-cream" style="font-size:12.5px;color:#c6c0a8">contato@francielefalconi.com.br</a>
+    <a href="https://wa.me/5548991118771" class="ff-link-cream" style="font-size:12.5px;color:#c6c0a8">WhatsApp</a>
+  </div>
+</footer>
+
+<script>
+(function () {
+  "use strict";
+  var reduce = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  var root = document;
+
+  // ---- reveal on scroll ----
+  var reveals = [].slice.call(root.querySelectorAll("[data-reveal]"));
+  if (!reduce) {
+    reveals.forEach(function (el, i) {
+      el.style.opacity = "0";
+      el.style.transform = "translateY(28px) scale(.98)";
+      el.style.transition =
+        "opacity .9s ease " + (i % 3) * 0.12 + "s, transform .9s cubic-bezier(.22,.7,.2,1) " + (i % 3) * 0.12 + "s";
+    });
+  }
+  function showAll() {
+    reveals.forEach(function (el) {
+      el.style.opacity = "1";
+      el.style.transform = "none";
+    });
+    reveals = [];
+  }
+  function revealPass() {
+    if (!reveals.length) return;
+    var vh = window.innerHeight;
+    reveals = reveals.filter(function (el) {
+      var r = el.getBoundingClientRect();
+      if (r.top < vh * 0.92 && r.bottom > 0) {
+        el.style.opacity = "1";
+        el.style.transform = "none";
+        return false;
+      }
+      return true;
+    });
+  }
+  if (reduce) {
+    showAll();
+  } else {
+    revealPass();
+    [120, 500, 1200].forEach(function (t) { setTimeout(revealPass, t); });
+    setTimeout(showAll, 4000);
+  }
+
+  // ---- parallax on [data-plx-scroll] ----
+  var plx = [].slice.call(root.querySelectorAll("[data-plx-scroll]")).map(function (el) {
+    return { el: el, base: el.style.transform || "", depth: parseFloat(el.getAttribute("data-plx-scroll")) || 20 };
+  });
+  function scrollParallax() {
+    if (reduce) return;
+    var vh = window.innerHeight;
+    plx.forEach(function (o) {
+      var r = o.el.getBoundingClientRect();
+      var center = r.top + r.height / 2;
+      var d = ((center - vh / 2) / vh) * o.depth;
+      o.el.style.transform = (o.base ? o.base + " " : "") + "translateY(" + d.toFixed(2) + "px)";
+    });
+  }
+
+  // ---- nav bg + progress bar ----
+  var nav = root.getElementById("ffnav");
+  var progress = root.getElementById("ffprogress");
+  function onScroll() {
+    if (nav) {
+      var on = window.scrollY > 60;
+      nav.style.background = on ? "rgba(44,53,36,.92)" : "rgba(44,53,36,0)";
+      nav.style.backdropFilter = on ? "blur(10px)" : "blur(0px)";
+      nav.style.webkitBackdropFilter = on ? "blur(10px)" : "blur(0px)";
+      nav.style.boxShadow = on ? "0 6px 24px rgba(20,26,15,.28)" : "none";
+    }
+    if (progress) {
+      var docH = document.documentElement.scrollHeight - window.innerHeight;
+      var pct = docH > 0 ? Math.min(100, Math.max(0, (window.scrollY / docH) * 100)) : 0;
+      progress.style.width = pct + "%";
+    }
+    scrollParallax();
+    revealPass();
+  }
+  window.addEventListener("scroll", onScroll, { passive: true });
+  window.addEventListener("resize", onScroll, { passive: true });
+  onScroll();
+
+  // ---- trilho dos cinco movimentos: auto-scroll lateral quando há transbordo (mobile) ----
+  var rail = root.querySelector(".ff-steps");
+  if (rail && !reduce) {
+    var dir = 1, hold = 0, pos = 0, raf;
+    function pause(ms) { hold = Math.max(hold, Date.now() + ms); }
+    rail.scrollLeft = 0;
+    pause(1200);
+    ["pointerdown", "touchstart", "wheel", "pointerenter"].forEach(function (ev) {
+      rail.addEventListener(ev, function () { pos = rail.scrollLeft; pause(3500); }, { passive: true });
+    });
+    ["pointerleave", "pointercancel", "touchend"].forEach(function (ev) {
+      rail.addEventListener(ev, function () { pos = rail.scrollLeft; hold = Date.now() + 600; }, { passive: true });
+    });
+    function step() {
+      var max = rail.scrollWidth - rail.clientWidth;
+      if (max > 6 && Date.now() > hold) {
+        pos = Math.min(max, Math.max(0, pos + 0.42 * dir));
+        rail.scrollLeft = pos;
+        if (dir > 0 && pos >= max) { dir = -1; pause(1600); }
+        else if (dir < 0 && pos <= 0) { dir = 1; pause(1600); }
+      }
+      raf = requestAnimationFrame(step);
+    }
+    raf = requestAnimationFrame(step);
+  }
+
+  // ---- parallax do hero com o mouse ----
+  if (!reduce) {
+    window.addEventListener("mousemove", function (ev) {
+      var hero = root.getElementById("inicio");
+      if (!hero) return;
+      var r = hero.getBoundingClientRect();
+      if (r.bottom < 0) return;
+      var cx = ev.clientX - r.left - r.width / 2;
+      var cy = ev.clientY - r.top - r.height / 2;
+      [].slice.call(hero.querySelectorAll("[data-plx]")).forEach(function (el) {
+        var d = parseFloat(el.getAttribute("data-plx"));
+        el.style.transform = "translate(" + (cx / r.width * d) + "px," + (cy / r.height * d) + "px)";
+      });
+    }, { passive: true });
+  }
+})();
+</script>
+</body>
+</html>

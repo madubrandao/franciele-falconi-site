@@ -1,0 +1,7 @@
+node_modules/
+_incoming/
+_raw/
+.DS_Store
+Thumbs.db
+*.log
+scripts/tmp/
