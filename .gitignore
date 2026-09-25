@@ -5,4 +5,6 @@ _raw/
 Thumbs.db
 *.log
 scripts/tmp/
-_wp-build/
+
+# prints de WhatsApp de clientes (depoimentos): ficam so no computador e no servidor, nunca no repo publico
+_wp-build/v4/img/ff4-depoimento-*

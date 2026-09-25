@@ -1,0 +1,817 @@
+import type { ReactNode } from "react";
+import Image from "next/image";
+import { FrancieleLandingInteractions } from "./landing-interactions";
+import styles from "./landing.module.css";
+
+const CONTACT = {
+  whatsappDisplay: "5548 9111-8771",
+  whatsappLink: "554891118771",
+  instagram: "francielefalconi.terapeuta",
+  email: "contato@francielefalconi.com.br",
+};
+
+const ASSETS = {
+  heroPhoto: "/franciele/fran-floral.png",
+  logoLockup: "/franciele/logo-lockup-hero.png",
+  logoIcon: "/franciele/logo-icon.png",
+  individual: "/franciele/caminho-individual.png",
+  company: "/franciele/caminho-empresa.jpeg",
+  aboutMain: "/franciele/sobre-principal.jpeg",
+  aboutCircle: "/franciele/sobre-palco.jpeg",
+  final: "/franciele/cta-final.jpeg",
+};
+
+const whatsappHref = `https://wa.me/${CONTACT.whatsappLink}`;
+const instagramHref = `https://instagram.com/${CONTACT.instagram}`;
+
+type IconProps = {
+  color?: string;
+  light?: boolean;
+  size?: number;
+};
+
+function SectionKicker({
+  children,
+  center = false,
+}: {
+  children: string;
+  center?: boolean;
+}) {
+  return (
+    <div className={`${styles.kicker} ${center ? styles.kickerCenter : ""}`}>
+      <span />
+      <span>{children}</span>
+      {center && <span />}
+    </div>
+  );
+}
+
+function LeafOrnament({
+  className = "",
+  color = "gold",
+  horizontal = false,
+}: {
+  className?: string;
+  color?: "gold" | "green";
+  horizontal?: boolean;
+}) {
+  const stroke = color === "gold" ? "#d9b877" : "#3c4a34";
+  return (
+    <svg
+      aria-hidden="true"
+      viewBox="0 0 200 200"
+      className={`${styles.leafOrnament} ${horizontal ? styles.leafHorizontal : ""} ${className}`}
+    >
+      <path
+        d={horizontal ? "M12 100 C70 100 130 100 190 100" : "M100 190 C100 120 100 70 100 12"}
+        fill="none"
+        stroke={stroke}
+        strokeWidth="2.4"
+      />
+      {horizontal ? (
+        <>
+          <ellipse cx="52" cy="78" rx="24" ry="11" fill={stroke} transform="rotate(-24 52 78)" />
+          <ellipse cx="86" cy="122" rx="24" ry="11" fill={stroke} transform="rotate(24 86 122)" />
+          <ellipse cx="118" cy="78" rx="22" ry="10" fill={stroke} transform="rotate(-24 118 78)" />
+          <ellipse cx="150" cy="120" rx="20" ry="9" fill={stroke} transform="rotate(24 150 120)" />
+        </>
+      ) : (
+        <>
+          <ellipse cx="78" cy="148" rx="24" ry="11" fill={stroke} transform="rotate(-26 78 148)" />
+          <ellipse cx="122" cy="122" rx="24" ry="11" fill={stroke} transform="rotate(26 122 122)" />
+          <ellipse cx="78" cy="96" rx="22" ry="10" fill={stroke} transform="rotate(-26 78 96)" />
+          <ellipse cx="122" cy="70" rx="22" ry="10" fill={stroke} transform="rotate(26 122 70)" />
+          <ellipse cx="80" cy="44" rx="19" ry="9" fill={stroke} transform="rotate(-26 80 44)" />
+        </>
+      )}
+    </svg>
+  );
+}
+
+function FinalSeal() {
+  return (
+    <div className={styles.finalSeal} data-plx-scroll="-14">
+      <svg aria-hidden="true" viewBox="0 0 120 120">
+        <defs>
+          <path id="ff-final-seal-path" d="M60,60 m-45,0 a45,45 0 1,1 90,0 a45,45 0 1,1 -90,0" />
+        </defs>
+        <text>
+          <textPath href="#ff-final-seal-path" startOffset="0">
+            RAÍZES · CONSCIÊNCIA · EQUILÍBRIO ·
+          </textPath>
+        </text>
+      </svg>
+      <Image src={ASSETS.logoIcon} alt="FF" width={52} height={52} />
+    </div>
+  );
+}
+
+function Wave({
+  className,
+  fill,
+  top = false,
+}: {
+  className: string;
+  fill: string;
+  top?: boolean;
+}) {
+  return (
+    <svg aria-hidden="true" viewBox={`0 0 1440 ${top ? "120" : "150"}`} preserveAspectRatio="none" className={className}>
+      <path
+        d={
+          top
+            ? "M0,0 L0,58 C250,124 520,116 760,68 C990,22 1210,16 1440,60 L1440,0 Z"
+            : "M0,150 L0,74 C230,-14 470,-6 720,52 C960,108 1200,120 1440,54 L1440,150 Z"
+        }
+        fill={fill}
+      />
+    </svg>
+  );
+}
+
+function SearchIcon({ color = "#8a7a4a", size = 26 }: IconProps) {
+  return (
+    <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke={color} strokeWidth="1.4" strokeLinecap="round">
+      <circle cx="10.6" cy="10.6" r="6.2" />
+      <path d="M15.4 15.4 20 20" />
+    </svg>
+  );
+}
+
+function RootIcon({ color = "#8a7a4a", size = 26 }: IconProps) {
+  return (
+    <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke={color} strokeWidth="1.4" strokeLinecap="round">
+      <path d="M12 21v-7" />
+      <path d="M12 14c-3.4 0-5.6-2-5.6-5.2C6.4 5.6 8.6 3.4 12 3.4s5.6 2.2 5.6 5.4C17.6 12 15.4 14 12 14z" />
+      <path d="M9 18.4c-1.8.4-3 1.2-3 2.6M15 18.4c1.8.4 3 1.2 3 2.6" />
+    </svg>
+  );
+}
+
+function LeafIcon({ color = "#8a7a4a", size = 26 }: IconProps) {
+  return (
+    <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke={color} strokeWidth="1.4" strokeLinecap="round" strokeLinejoin="round">
+      <path d="M5.5 19.5c-1.4-3.4.4-8 4-10.6C12 7 15 6.4 18.5 6.6c.6 3.6-.2 7-2.6 9.6-2.6 2.8-7 3.8-10.4 3.3z" />
+      <path d="M8 17c2-3.4 4.6-5.8 8-7.4" />
+    </svg>
+  );
+}
+
+function HomeIcon({ color = "#8a7a4a", size = 26 }: IconProps) {
+  return (
+    <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke={color} strokeWidth="1.4" strokeLinecap="round" strokeLinejoin="round">
+      <path d="M4 20h16" />
+      <path d="M6.5 20V11l5.5-4.4L17.5 11v9" />
+      <path d="M10.4 20v-4.6h3.2V20" />
+    </svg>
+  );
+}
+
+function CheckIcon({ color = "#f6f1e4", size = 26 }: IconProps) {
+  return (
+    <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke={color} strokeWidth="1.4" strokeLinecap="round" strokeLinejoin="round">
+      <circle cx="12" cy="12" r="8.4" />
+      <path d="M8.2 12.4l2.6 2.6 5-5.4" />
+    </svg>
+  );
+}
+
+function PlusIcon({ light = false }: IconProps) {
+  const color = light ? "#f6f1e4" : "#8a7a4a";
+  return (
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke={color} strokeWidth="1.5" strokeLinecap="round">
+      <circle cx="12" cy="12" r="8.4" />
+      <path d="M12 3.6v16.8M3.6 12h16.8" />
+    </svg>
+  );
+}
+
+function EyeIcon({ light = false }: IconProps) {
+  const color = light ? "#f6f1e4" : "#8a7a4a";
+  return (
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke={color} strokeWidth="1.5" strokeLinecap="round">
+      <path d="M4 15c2.4-3.6 5-5.4 8-5.4s5.6 1.8 8 5.4" />
+      <circle cx="12" cy="15" r="2.4" />
+    </svg>
+  );
+}
+
+function NodesIcon({ light = false }: IconProps) {
+  const color = light ? "#f6f1e4" : "#8a7a4a";
+  return (
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke={color} strokeWidth="1.5" strokeLinecap="round">
+      <circle cx="12" cy="6" r="2.4" />
+      <circle cx="6" cy="17" r="2.4" />
+      <circle cx="18" cy="17" r="2.4" />
+      <path d="M12 8.4v3.2M10.4 13.2 7.6 15M13.6 13.2 16.4 15" />
+    </svg>
+  );
+}
+
+function HeartIcon({ color = "#8a7a4a", light = false, size = 20 }: IconProps) {
+  const stroke = light ? "#f6f1e4" : color;
+  return (
+    <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke={stroke} strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+      <path d="M12 20s-7-4.4-7-9.2A4.1 4.1 0 0 1 12 8.3a4.1 4.1 0 0 1 7 2.5C19 15.6 12 20 12 20z" />
+    </svg>
+  );
+}
+
+function PeopleIcon() {
+  return (
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#8a7a4a" strokeWidth="1.4" strokeLinecap="round">
+      <circle cx="9" cy="8" r="3" />
+      <circle cx="17" cy="9" r="2.2" />
+      <path d="M3.5 19c0-3 2.5-5 5.5-5s5.5 2 5.5 5" />
+      <path d="M16 14.5c2.4.3 4.2 2.1 4.2 4.5" />
+    </svg>
+  );
+}
+
+function ScreenIcon() {
+  return (
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#8a7a4a" strokeWidth="1.4" strokeLinecap="round">
+      <rect x="3" y="4.5" width="18" height="12" rx="1.6" />
+      <path d="M9 20h6M12 16.5V20" />
+    </svg>
+  );
+}
+
+function SmileIcon() {
+  return (
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#8a7a4a" strokeWidth="1.4" strokeLinecap="round">
+      <circle cx="12" cy="12" r="8.5" />
+      <path d="M9 14.2c.8.9 1.8 1.3 3 1.3s2.2-.4 3-1.3" />
+      <path d="M9.2 9.6h.01M14.8 9.6h.01" />
+    </svg>
+  );
+}
+
+function PulseIcon() {
+  return (
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#8a7a4a" strokeWidth="1.4" strokeLinecap="round" strokeLinejoin="round">
+      <path d="M3 12.5h3.5l2-5 3 9.5 2.5-6 1.8 3.5H21" />
+    </svg>
+  );
+}
+
+function ChatIcon({ color = "#8a7a4a", size = 20 }: IconProps) {
+  return (
+    <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke={color} strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+      <path d="M20.5 12.4c0 3.7-3.8 6.7-8.5 6.7-1 0-2-.1-2.9-.4L4.5 20.5l1.3-3.4c-1.4-1.2-2.3-2.8-2.3-4.7C3.5 8.7 7.3 5.7 12 5.7s8.5 3 8.5 6.7z" />
+    </svg>
+  );
+}
+
+function MailIcon() {
+  return (
+    <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="#d9b877" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+      <rect x="3" y="5.5" width="18" height="13" rx="1.6" />
+      <path d="m3.6 6.4 8.4 6.2 8.4-6.2" />
+    </svg>
+  );
+}
+
+function InstagramIcon() {
+  return (
+    <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="#d9b877" strokeWidth="1.5" strokeLinecap="round">
+      <rect x="4" y="4" width="16" height="16" rx="4.6" />
+      <circle cx="12" cy="12" r="3.6" />
+      <path d="M16.8 7.4h.01" />
+    </svg>
+  );
+}
+
+function LocationIcon() {
+  return (
+    <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="#d9b877" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+      <path d="M12 21s-6.4-5.4-6.4-10.2A6.4 6.4 0 0 1 18.4 10.8C18.4 15.6 12 21 12 21z" />
+      <circle cx="12" cy="10.6" r="2.4" />
+    </svg>
+  );
+}
+
+const serviceFeatures = [
+  {
+    title: "ANÁLISE INTEGRATIVA",
+    text: "Leitura da história emocional e dos padrões que se repetem.",
+    icon: <PlusIcon light />,
+  },
+  {
+    title: "HIPNOTERAPIA",
+    text: "Acesso ao material inconsciente que sustenta o sofrimento.",
+    icon: <EyeIcon light />,
+  },
+  {
+    title: "CONSTELAÇÃO FAMILIAR",
+    text: "Individual ou em grupo, para compreender heranças e vínculos.",
+    icon: <NodesIcon light />,
+  },
+  {
+    title: "REIKI E BARRAS DE ACCESS",
+    text: "Apoio energético para aliviar tensão e reorganizar o corpo.",
+    icon: <HeartIcon light />,
+  },
+];
+
+const methodSteps = [
+  { number: "01", title: "CONSCIÊNCIA", text: "Entender onde você está e por quê.", icon: <SearchIcon /> },
+  { number: "02", title: "RAIZ", text: "A origem dos padrões que se repetem.", icon: <RootIcon /> },
+  { number: "03", title: "RESSIGNIFICAÇÃO", text: "Liberar o peso emocional que os sustenta.", icon: <LeafIcon /> },
+  { number: "04", title: "RECONSTRUÇÃO", text: "Novos comportamentos, limites e identidade.", icon: <HomeIcon /> },
+  { number: "05", title: "INTEGRAÇÃO", text: "Consolidar a mudança no dia a dia.", icon: <CheckIcon /> },
+];
+
+const corporateServices = [
+  {
+    title: "Palestras",
+    text: "Encontros inspiradores sobre bem-estar emocional, saúde mental e qualidade das relações no ambiente de trabalho.",
+    icon: <PeopleIcon />,
+  },
+  {
+    title: "Workshops",
+    text: "Práticas vivenciais e reflexivas que convidam à ação, à consciência e ao desenvolvimento humano dentro das equipes.",
+    icon: <ScreenIcon />,
+  },
+  {
+    title: "Rodas de Conversa",
+    text: "Espaços seguros de escuta ativa e troca entre colaboradores, fortalecendo vínculos e a cultura de cuidado mútuo.",
+    icon: <SmileIcon />,
+  },
+  {
+    title: "Vivências para Equipes",
+    text: "Experiências terapêuticas coletivas focadas em reconexão, presença e fortalecimento das relações profissionais.",
+    icon: <PulseIcon />,
+  },
+  {
+    title: "Saúde Emocional no Trabalho",
+    text: "Programas de cuidado emocional que contribuem para um clima organizacional mais saudável e produtivo.",
+    icon: <HeartIcon />,
+  },
+  {
+    title: "Comunicação e Relações Saudáveis",
+    text: "Práticas que desenvolvem escuta, empatia e qualidade nas trocas interpessoais dentro das organizações.",
+    icon: <ChatIcon />,
+  },
+];
+
+const testimonials = [
+  { initial: "A", kind: "PROCESSO INDIVIDUAL" },
+  { initial: "M", kind: "WORKSHOP" },
+  { initial: "R", kind: "PROGRAMA IN COMPANY" },
+];
+
+const mockupCards = [
+  { id: "c1", variant: "cardImage", label: "", meta: "há 5 min" },
+  { id: "c2", variant: "cardNote", label: "Nota de texto", meta: "há 19 min" },
+  { id: "c3", variant: "cardShot", label: "Captura", meta: "há 23 min" },
+  { id: "c4", variant: "cardColor", label: "#3C4A34", meta: "há 35 min" },
+  { id: "c5", variant: "cardIcon", label: "✦", meta: "há 37 min" },
+] as const;
+
+function PrimaryButton({
+  children,
+  className = "",
+}: {
+  children: string;
+  className?: string;
+}) {
+  return (
+    <a href={whatsappHref} className={`${styles.primaryButton} ${className}`} aria-label={`${children} pelo WhatsApp`}>
+      {children}
+    </a>
+  );
+}
+
+function RoundIcon({ children, filled = false }: { children: ReactNode; filled?: boolean }) {
+  return <div className={`${styles.roundIcon} ${filled ? styles.roundIconFilled : ""}`}>{children}</div>;
+}
+
+function FeatureItem({ title, text, icon }: { title: string; text: string; icon: ReactNode }) {
+  return (
+    <div className={styles.featureItem} data-reveal>
+      <RoundIcon filled>{icon}</RoundIcon>
+      <div>
+        <h4>{title}</h4>
+        <p>{text}</p>
+      </div>
+    </div>
+  );
+}
+
+function CorporateItem({ title, text, icon }: { title: string; text: string; icon: ReactNode }) {
+  return (
+    <div className={styles.corporateItem} data-reveal>
+      <RoundIcon>{icon}</RoundIcon>
+      <div>
+        <h4>{title}</h4>
+        <p>{text}</p>
+      </div>
+    </div>
+  );
+}
+
+function ContactItem({
+  href,
+  label,
+  children,
+}: {
+  href?: string;
+  label: string;
+  children: ReactNode;
+}) {
+  const content = (
+    <>
+      <span className={styles.contactIcon}>{children}</span>
+      <span className={styles.breakText}>{label}</span>
+    </>
+  );
+
+  if (!href) return <div className={styles.contactItem}>{content}</div>;
+
+  return (
+    <a href={href} className={styles.contactItem} aria-label={label}>
+      {content}
+    </a>
+  );
+}
+
+export function FrancieleLanding() {
+  return (
+    <main className={styles.landing} data-franciele-page>
+      <FrancieleLandingInteractions />
+      <div className={styles.progress} data-scroll-progress />
+
+      <nav className={styles.nav} data-landing-nav aria-label="Navegação principal">
+        <div className={styles.navPill}>
+          <a href="#inicio" className={styles.navBrand} aria-label="Ir para o início">
+            <Image src={ASSETS.logoIcon} alt="FF" width={34} height={34} />
+            <span>Franciele Falconi</span>
+          </a>
+          <div className={styles.navMenu}>
+            <a href="#caminhos" className={styles.navLink}>
+              Caminhos
+            </a>
+            <a href="#servico" className={styles.navLink}>
+              Serviços
+            </a>
+            <a href="#metodo" className={styles.navLink}>
+              Método
+            </a>
+            <a href="#sobre" className={styles.navLink}>
+              Sobre
+            </a>
+          </div>
+          <a
+            href={whatsappHref}
+            className={styles.navPillCta}
+            aria-label="Agendar uma conversa pelo WhatsApp"
+          >
+            Agendar
+          </a>
+        </div>
+      </nav>
+
+      <header id="inicio" className={styles.hero} data-screen-label="Hero">
+        <div className={styles.heroSticky}>
+          <div className={styles.heroBackdrop} aria-hidden="true" />
+          <svg
+            className={styles.heroHills}
+            viewBox="0 0 1440 320"
+            preserveAspectRatio="none"
+            aria-hidden="true"
+          >
+            <path
+              d="M0,214 C240,132 430,150 660,204 C900,260 1130,250 1440,176 L1440,320 L0,320 Z"
+              fill="var(--ff-green)"
+              opacity="0.85"
+            />
+            <path
+              d="M0,268 C280,206 520,232 780,262 C1040,292 1240,284 1440,244 L1440,320 L0,320 Z"
+              fill="var(--ff-green-dark)"
+            />
+          </svg>
+
+          <div className={styles.heroContent} data-hero-content>
+            <div className={styles.heroEyebrow}>
+              <LeafIcon color="#f6f1e4" size={18} />
+              <span>Terapia &amp; desenvolvimento humano</span>
+            </div>
+            <h1 className={styles.heroTitle}>
+              <span className={styles.heroTitleStrong}>Cuide uma vez.</span>
+              <span className={styles.heroTitleScript}>Floresça sempre.</span>
+            </h1>
+            <p className={styles.heroLead}>
+              Texto de apoio (placeholder) — descreva aqui, em duas ou três linhas, a
+              proposta do Método Falconi para acompanhar o título.
+            </p>
+            <div className={styles.heroCtaRow}>
+              <a href={whatsappHref} className={styles.heroCta}>
+                <ChatIcon color="#f6f1e4" size={18} />
+                Agendar uma conversa
+              </a>
+            </div>
+            <div className={styles.heroBadges}>
+              <span>Atendimento humano</span>
+              <span>Online e presencial</span>
+              <span>Florianópolis · SC</span>
+            </div>
+          </div>
+
+          <div className={styles.heroMockup} data-hero-mockup>
+            <div className={styles.mockupFrame}>
+              <div className={styles.mockupWindow}>
+                <aside className={styles.mockupSidebar}>
+                  <div className={styles.mockupBrand}>
+                    <span />
+                    Franciele
+                  </div>
+                </aside>
+                <div className={styles.mockupBody}>
+                  <div className={styles.mockupTopbar}>
+                    <div className={styles.mockupSearch}>
+                      <SearchIcon color="#8a9478" size={16} />
+                      <span>Buscar…</span>
+                    </div>
+                    <div className={styles.mockupTools}>
+                      <i />
+                      <i />
+                      <i />
+                    </div>
+                  </div>
+                  <div className={styles.mockupTabs}>
+                    <span className={styles.mockupTabActive}>Histórico 24</span>
+                    <span>Categoria 24</span>
+                    <span>Categoria 24</span>
+                    <span>Categoria 24</span>
+                    <span>Categoria 24</span>
+                    <span className={styles.mockupTabAdd}>+</span>
+                  </div>
+                  <div className={styles.mockupCards}>
+                    {mockupCards.map((card) => (
+                      <article className={styles.mockupCard} key={card.id}>
+                        <div
+                          className={`${styles.mockupCardMedia} ${styles[card.variant]}`}
+                        >
+                          {card.label ? <span>{card.label}</span> : null}
+                        </div>
+                        <div className={styles.mockupCardFoot}>
+                          <i />
+                          <span>{card.meta}</span>
+                        </div>
+                      </article>
+                    ))}
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </header>
+
+      <section id="caminhos" className={styles.pathsSection} data-screen-label="Qual caminho é o seu">
+        <div className={styles.container}>
+          <div className={styles.sectionHeader} data-reveal>
+            <SectionKicker center>UM TRABALHO, DOIS CAMINHOS</SectionKicker>
+            <h2>
+              Qual caminho <em>é o seu?</em>
+            </h2>
+          </div>
+
+          <div className={styles.pathsGrid}>
+            <article className={styles.pathCard} data-reveal>
+              <h3>PARA VOCÊ</h3>
+              <span>Processo individual</span>
+              <div className={`${styles.pathImage} ${styles.pathImageIndividual}`}>
+                <Image
+                  src={ASSETS.individual}
+                  alt="Atendimento individual com Franciele Falconi"
+                  fill
+                  sizes="(max-width: 720px) 100vw, 50vw"
+                  className={styles.coverImage}
+                />
+              </div>
+              <h4>Você sente que perdeu a conexão consigo mesma?</h4>
+              <p>Sobrecarga emocional, relações que cansam mais do que nutrem. Talvez seja hora de olhar para dentro — com apoio.</p>
+              <a href={whatsappHref} className={styles.textLink} aria-label="Quero cuidar de mim pelo WhatsApp">
+                QUERO CUIDAR DE MIM <span>→</span>
+              </a>
+            </article>
+
+            <article className={styles.pathCard} data-reveal>
+              <h3>PARA SUA EMPRESA</h3>
+              <span>Equipes e lideranças</span>
+              <div className={`${styles.pathImage} ${styles.pathImageCompany}`}>
+                <Image
+                  src={ASSETS.company}
+                  alt="Franciele Falconi em trabalho com empresas"
+                  fill
+                  sizes="(max-width: 720px) 100vw, 50vw"
+                  className={styles.coverImage}
+                />
+              </div>
+              <h4>Sua equipe está esgotada, e a liderança não sabe por quê?</h4>
+              <p>Conflitos e lideranças despreparadas para o lado humano da gestão custam caro. Existe um caminho estruturado para mudar isso.</p>
+              <a href={whatsappHref} className={styles.textLink} aria-label="Falar sobre minha empresa pelo WhatsApp">
+                FALAR SOBRE MINHA EMPRESA <span>→</span>
+              </a>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section className={styles.testimonialsSection} id="depoimentos" data-screen-label="Depoimentos">
+        <LeafOrnament className={styles.testimonialsLeaf} color="green" horizontal />
+        <div className={styles.testimonialsPanel} data-reveal>
+          <div className={styles.testimonialsTitle}>QUEM JÁ PERCORREU ESSE CAMINHO</div>
+          <div className={styles.testimonialsGrid}>
+            {testimonials.map((item) => (
+              <article className={styles.testimonial} key={item.kind}>
+                <div className={styles.avatar}>{item.initial}</div>
+                <div>
+                  <p>Texto do depoimento — envie os depoimentos reais e eu substituo.</p>
+                  <strong>— NOME DO CLIENTE</strong>
+                  <span>{item.kind}</span>
+                </div>
+              </article>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section id="servico" className={styles.serviceSection} data-screen-label="Serviços e método">
+        <div className={styles.container}>
+          <div className={styles.twoColumn}>
+            <div>
+              <div data-reveal>
+                <SectionKicker>SERVIÇO EM DESTAQUE</SectionKicker>
+                <h2>Processo Terapêutico Individual</h2>
+                <p className={styles.leadText}>
+                  O Método Falconi em profundidade: um espaço para compreender a raiz do que se repete, com foco em consciência emocional, limites mais saudáveis e transformação real — não apenas alívio do sintoma.
+                </p>
+              </div>
+              <div className={styles.featureList}>
+                {serviceFeatures.map((feature) => (
+                  <FeatureItem key={feature.title} {...feature} />
+                ))}
+              </div>
+              <PrimaryButton className={styles.serviceCta}>QUERO COMEÇAR</PrimaryButton>
+            </div>
+
+            <div id="metodo" className={styles.methodBlock}>
+              <div className={styles.methodHeader} data-reveal>
+                <SectionKicker center>MÉTODO FALCONI</SectionKicker>
+                <h2>
+                  Cinco movimentos, <em>uma transformação</em>
+                </h2>
+              </div>
+
+              <div className={styles.steps} data-reveal>
+                {methodSteps.map((step, index) => (
+                  <div className={styles.stepGroup} key={step.number}>
+                    <article className={styles.step}>
+                      <div className={`${styles.stepIcon} ${index === methodSteps.length - 1 ? styles.stepIconFinal : ""}`}>{step.icon}</div>
+                      <div className={styles.stepBody}>
+                        <div className={styles.stepNumber}>{step.number}</div>
+                        <h3>{step.title}</h3>
+                        <p>{step.text}</p>
+                      </div>
+                    </article>
+                    {index < methodSteps.length - 1 && <div className={styles.arrow}>→</div>}
+                  </div>
+                ))}
+              </div>
+
+              <p className={styles.methodText} data-reveal>
+                Todo processo começa com um mapeamento emocional que identifica os padrões que mais pesam na sua vida hoje. A partir dele, construímos juntas um plano genuinamente seu — não um roteiro pronto.
+              </p>
+              <div className={styles.scriptPhrase} data-reveal>
+                Não é uma fórmula genérica,
+                <br />é um caminho
+              </div>
+            </div>
+          </div>
+
+          <div id="empresas" className={styles.corporateHeader} data-reveal>
+            <SectionKicker center>PARA EMPRESAS</SectionKicker>
+            <h2>Saúde emocional como cultura</h2>
+          </div>
+          <div className={styles.corporateGrid}>
+            {corporateServices.map((service) => (
+              <CorporateItem key={service.title} {...service} />
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section id="sobre" className={styles.aboutSection} data-screen-label="Sobre">
+        <div className={`${styles.container} ${styles.aboutGrid}`}>
+          <div className={styles.aboutMedia} data-reveal>
+            <div className={styles.aboutOutline} data-plx-scroll="16" />
+            <div className={styles.aboutMainImage}>
+              <Image
+                src={ASSETS.aboutMain}
+                alt="Franciele Falconi em palestra"
+                fill
+                sizes="(max-width: 900px) 100vw, 50vw"
+                className={styles.coverImage}
+              />
+            </div>
+            <div className={styles.aboutCircleImage} data-plx-scroll="-12">
+              <Image
+                src={ASSETS.aboutCircle}
+                alt="Franciele Falconi conduzindo encontro"
+                fill
+                sizes="156px"
+                className={styles.coverImage}
+              />
+            </div>
+          </div>
+
+          <div className={styles.aboutCopy} data-reveal>
+            <SectionKicker>SOBRE</SectionKicker>
+            <h2>Presença, escuta ativa e cuidado genuíno em cada encontro.</h2>
+            <div className={styles.aboutScript}>antes da técnica, a pessoa</div>
+            <p>
+              Minha atuação une neurociência, psicanálise e abordagem sistêmica a ferramentas de desenvolvimento emocional. Acredito que ansiedade, exaustão e conflitos nas relações não surgem por acaso — são reflexos de histórias, padrões inconscientes e dinâmicas relacionais que precisam ser compreendidos para que a mudança aconteça de forma verdadeira.
+            </p>
+            <p>
+              Cada processo começa com presença e escuta ativa: antes de qualquer técnica, é preciso compreender a pessoa (ou a equipe) que está à minha frente, com cuidado genuíno pelo caminho que ela está percorrendo.
+            </p>
+            <div className={styles.tags}>
+              <span>NEUROCIÊNCIA</span>
+              <span>PSICANÁLISE</span>
+              <span>ABORDAGEM SISTÊMICA</span>
+              <span>DESENVOLVIMENTO EMOCIONAL</span>
+            </div>
+            <a href={whatsappHref} className={styles.textLink} aria-label="Agendar uma conversa pelo WhatsApp">
+              AGENDAR UMA CONVERSA <span>→</span>
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <section id="conversar" className={styles.finalSection} data-screen-label="Vamos conversar">
+        <Wave className={styles.finalWave} fill="#e7e0cf" top />
+        <div className={styles.finalGlow} data-plx-scroll="18" />
+        <div className={`${styles.container} ${styles.finalGrid}`}>
+          <div className={styles.finalCopy} data-reveal>
+            <h2>
+              Vamos começar <em>essa conversa?</em>
+            </h2>
+            <div className={styles.finalScript}>sem compromisso, com acolhimento</div>
+            <p>O primeiro passo é entender onde você está e o que faz sentido a partir daqui. Escolha o caminho mais confortável para você.</p>
+            <PrimaryButton className={styles.finalCta}>AGENDAR PELO WHATSAPP</PrimaryButton>
+
+            <div className={styles.contactGrid}>
+              <ContactItem href={whatsappHref} label={CONTACT.whatsappDisplay}>
+                <ChatIcon color="#d9b877" size={17} />
+              </ContactItem>
+              <ContactItem href={`mailto:${CONTACT.email}`} label={CONTACT.email}>
+                <MailIcon />
+              </ContactItem>
+              <ContactItem href={instagramHref} label={`@${CONTACT.instagram}`}>
+                <InstagramIcon />
+              </ContactItem>
+              <ContactItem label="Atendimento online e presencial">
+                <LocationIcon />
+              </ContactItem>
+            </div>
+          </div>
+
+          <div className={styles.finalMedia} data-reveal>
+            <div className={styles.finalImage}>
+              <Image
+                src={ASSETS.final}
+                alt="Franciele Falconi em palestra"
+                fill
+                sizes="(max-width: 900px) 78vw, 360px"
+                className={styles.coverImage}
+              />
+            </div>
+            <FinalSeal />
+          </div>
+        </div>
+      </section>
+
+      <footer className={styles.footer} data-screen-label="Rodapé">
+        <div className={styles.footerBrand}>
+          <Image src={ASSETS.logoIcon} alt="FF" width={38} height={38} />
+          <div>
+            <strong>FRANCIELE FALCONI</strong>
+            <span>DESENVOLVIMENTO HUMANO &amp; SAÚDE EMOCIONAL</span>
+          </div>
+        </div>
+        <div className={styles.footerLinks}>
+          <a href={instagramHref} className={styles.breakText}>
+            @{CONTACT.instagram}
+          </a>
+          <a href={`mailto:${CONTACT.email}`} className={styles.breakText}>
+            {CONTACT.email}
+          </a>
+          <a href={whatsappHref}>WhatsApp</a>
+        </div>
+      </footer>
+    </main>
+  );
+}

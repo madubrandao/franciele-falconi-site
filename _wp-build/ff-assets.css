@@ -1,0 +1,355 @@
+/* ===== Franciele Falconi — CSS (v3: Home em widgets nativos do Elementor) =====
+   Reproduz o design v2. Widgets nativos carregam texto/imagem/icone; este CSS
+   dá o visual do design (nav fixa, formas orgânicas, selos, ondas, ornamentos,
+   layout multi-coluna) e guarda contra Astra/Elementor. */
+
+:root{
+  --ff-ground:#f1ece1;--ff-green-deep:#29311e;--ff-green-mid:#2b3524;--ff-green-soft:#3c4a34;
+  --ff-green-light:#C8E4B8;--ff-gold:#cb9d50;--ff-gold-light:#d9b877;--ff-cream:#ece5d3;
+  /* aliases usados pelo hero/nav modelo supaste (brief HERO-SUPASTE) */
+  --ff-green:#3c4a34;--ff-green-dark:#2b3524;--ff-bg:#f1ece1;--ff-light:#ece5d3;
+}
+*,*::before,*::after{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:84px}
+body{background:var(--ff-ground);font-family:'Montserrat',sans-serif;color:var(--ff-green-soft)}
+body a{color:#8a6a2f;text-decoration:none}
+body a:hover{color:var(--ff-gold)}
+::selection{background:var(--ff-gold);color:#fff}
+
+@keyframes ffPulse{0%,100%{opacity:.45;transform:scale(1)}50%{opacity:1;transform:scale(1.3)}}
+@keyframes ffSpin{from{transform:rotate(0deg)}to{transform:rotate(360deg)}}
+@keyframes ffBtnPulse{0%,100%{box-shadow:0 8px 24px rgba(203,157,80,.3)}55%{box-shadow:0 12px 34px rgba(203,157,80,.5),0 0 0 8px rgba(203,157,80,.12)}}
+
+/* guards contra Astra / Elementor (matam margens e espacos que nao vem do design) */
+.elementor-widget-html h1,.elementor-widget-html h2,.elementor-widget-html h3,
+.elementor-widget-html h4,.elementor-widget-html p{margin:0;padding:0}
+.elementor-widget-html svg,.elementor-widget-html img{display:block}
+/* espacamento padrao de widget do Elementor = 0 (o design controla via _margin/gap) */
+.elementor-widget:not(:last-child){margin-block-end:0}
+.elementor-element .elementor-widget-container{margin:0}
+/* Astra poe margin em h1..h6, p, ul dentro dos widgets nativos */
+.elementor-widget-heading .elementor-heading-title{margin:0}
+.elementor-widget-text-editor p{margin:0}
+.elementor-widget-icon-box .elementor-icon-box-title,
+.elementor-widget-icon-box .elementor-icon-box-description{margin:0}
+.elementor-widget-icon-list .elementor-icon-list-items{margin:0;padding:0}
+.elementor-button{margin:0}
+
+/* LARGURA MAXIMA por secao (o kit forcava 1200; o design usa 1180/1220/1320) */
+#caminhos>.e-con-inner,#servico>.e-con-inner,#sobre>.e-con-inner{max-width:1220px;margin-inline:auto}
+#depoimentos>.e-con-inner,#conversar>.e-con-inner{max-width:1180px;margin-inline:auto}
+
+/* zerar o gap default (20px) das colunas internas — o espacamento vem dos _margin */
+#ff-paths>.e-con,.ff-depo-cell>.e-con,#ff-stepsrow>.e-con,
+#ff-svcgrid>.e-con,#ff-sobregrid>.e-con,#ff-convgrid>.e-con,
+#ff-sobre-media,#ff-conv-media{--gap:0px;gap:0}
+
+/* ---------------- barra de progresso ---------------- */
+#ffprogress{position:fixed;top:0;left:0;height:3px;width:0;background:linear-gradient(90deg,var(--ff-gold-light),var(--ff-gold));z-index:9999;pointer-events:none;transition:width .12s linear}
+[data-plx-scroll]{will-change:transform}
+
+/* ---------------- NAV — pill flutuante (modelo supaste.com) ---------------- */
+/* #ffnav = wrapper fixo transparente; #ff-navpill = a pill visivel */
+#ffnav{
+  position:fixed!important;top:0;left:0;right:0;z-index:9000;
+  display:flex!important;justify-content:center;
+  padding:clamp(14px,2vw,24px) clamp(16px,3vw,32px)!important;
+  background:transparent!important;pointer-events:none;
+}
+#ff-navpill{
+  pointer-events:auto;width:100%!important;max-width:920px;
+  display:flex!important;align-items:center;flex-wrap:nowrap;
+  gap:clamp(14px,2.4vw,34px)!important;
+  padding:10px 10px 10px clamp(16px,2vw,22px)!important;
+  border:1px solid rgba(246,241,228,.2);border-radius:999px;
+  background:var(--ff-green);
+  box-shadow:0 16px 40px rgba(12,16,8,.4);
+  transition:background .4s,box-shadow .4s;
+}
+#ffnav.ff-nav-scrolled #ff-navpill{background:var(--ff-green-dark);box-shadow:0 18px 44px rgba(12,16,8,.55)}
+#ff-navbrand{flex:none!important;width:auto!important;display:flex!important;align-items:center;gap:10px!important}
+.ff-nav-logo{flex:none}
+.ff-nav-logo img{width:clamp(28px,3vw,34px)!important;height:auto;aspect-ratio:1;border-radius:50%;object-fit:cover;min-width:28px}
+.ff-nav-wordmark .elementor-heading-title{font-family:'Playfair Display',serif;font-size:clamp(13px,1.1vw,15px);letter-spacing:.02em;color:var(--ff-light);white-space:nowrap;line-height:1}
+.ff-navlinks{margin-right:auto!important;width:auto!important}
+.ff-navlinks .elementor-icon-list-items{display:flex!important;align-items:center;flex-wrap:nowrap;gap:clamp(12px,1.8vw,26px)}
+.ff-navlinks .elementor-icon-list-item{margin:0!important;padding:0!important}
+.ff-navlinks .elementor-icon-list-item:after{display:none!important}
+.ff-navlinks .elementor-icon-list-icon{display:none!important}
+.ff-navlinks .elementor-icon-list-text{font-family:'Cinzel',serif;font-size:clamp(10.5px,.86vw,12px);letter-spacing:.14em;text-transform:uppercase;color:rgba(246,241,228,.72);font-weight:500;white-space:nowrap;transition:color .25s}
+.ff-navlinks a:hover .elementor-icon-list-text{color:var(--ff-gold-light)}
+.ff-nav-cta{flex:none!important}
+.ff-nav-cta .elementor-button{
+  display:inline-flex;align-items:center;justify-content:center;
+  min-height:40px;padding:0 clamp(18px,2vw,24px)!important;
+  border-radius:999px!important;
+  background:var(--ff-light)!important;color:var(--ff-green)!important;border:0!important;
+  font-size:clamp(10.5px,.9vw,12px)!important;font-weight:600;letter-spacing:.12em;text-transform:uppercase;
+  box-shadow:none!important;animation:none!important;
+  transition:transform .3s,background .3s;
+}
+.ff-nav-cta .elementor-button:hover{transform:translateY(-1px);background:#fff!important}
+@media(max-width:760px){
+  #ff-navpill{justify-content:space-between;gap:12px!important}
+  .ff-navlinks{display:none!important}
+}
+
+/* ---------------- botões ---------------- */
+.ff-btn-primary .elementor-button,.ff-btn-ghost .elementor-button{padding:clamp(13px,1.5vw,16px) clamp(22px,2.6vw,32px)!important;font-size:clamp(10.5px,.9vw,12px)!important}
+.ff-btn-primary .elementor-button{background:linear-gradient(135deg,var(--ff-gold-light),var(--ff-gold))!important;color:#3c4a34!important;border:0!important;border-radius:999px!important;letter-spacing:.12em;animation:ffBtnPulse 2.6s ease-in-out infinite;transition:transform .3s}
+.ff-btn-primary .elementor-button:hover{transform:translateY(-2px);animation:none}
+#ffnav .ff-btn-primary .elementor-button:hover{transform:translateY(-1px)}
+.ff-btn-ghost .elementor-button{background:transparent!important;color:#dcdfd0!important;border:1px solid rgba(236,229,211,.42)!important;border-radius:999px!important;letter-spacing:.12em;transition:border-color .3s,background .3s,color .3s}
+.ff-btn-ghost .elementor-button:hover{border-color:var(--ff-gold-light)!important;background:rgba(236,229,211,.08)!important;color:var(--ff-cream)!important}
+.ff-ulink .elementor-button{background:transparent!important;border:0!important;border-bottom:1px solid var(--ff-gold)!important;border-radius:0!important;padding:0 0 6px!important;color:#8a6a2f!important;font-size:11.5px!important;letter-spacing:.16em;font-weight:600;box-shadow:none!important;animation:none!important;transition:color .3s}
+.ff-ulink .elementor-button:hover{background:transparent!important;color:var(--ff-gold-light)!important;transform:none}
+
+/* ---------------- eyebrow (Divisor + Título Cinzel) ---------------- */
+.ff-eye-t .elementor-heading-title{font-family:'Cinzel',serif;letter-spacing:.32em;color:#8a7a4a;white-space:nowrap;line-height:1}
+.ff-eye-rule{width:28px!important;flex:0 0 28px}
+.ff-eye-rule .elementor-divider{padding:0}
+.ff-eye-rule .elementor-divider-separator{width:28px;margin:0}
+
+/* ---------------- HERO — modelo supaste.com adaptado aos tons da marca ---------------- */
+/* #inicio (165vh + gradiente) > .ff-hero-sticky (sticky 100svh) > [.ff-hero-deco, #hero-inner, .ff-hero-mockupwrap].
+   Subida do mockup + fade do conteudo = var --hero-progress (0->1) setada pelo ff-assets.js. */
+#inicio{
+  position:relative;min-height:165vh!important;overflow:visible!important;
+  background:linear-gradient(180deg,#1b2217 0%,var(--ff-green) 30%,#6f7d5a 58%,var(--ff-bg) 100%)!important;
+}
+#inicio,#inicio>.e-con-inner{min-height:165vh}
+.ff-hero-sticky{
+  position:sticky!important;top:0;height:100svh;min-height:100svh;overflow:hidden;
+  padding:clamp(96px,14vh,140px) clamp(20px,4vw,40px)!important;
+  justify-content:center;align-items:center;
+}
+.ff-hero-deco,.ff-hero-mockupwrap{position:absolute!important;left:0;top:0;width:100%!important;height:100%;margin:0!important;pointer-events:none}
+.ff-hero-deco{z-index:1}
+.ff-hero-mockupwrap{z-index:2}
+.ff-hero-deco .elementor-widget-html,.ff-hero-mockupwrap .elementor-widget-html{position:absolute;inset:0}
+.ff-hero-backdrop{position:absolute;inset:0;z-index:0;background:radial-gradient(120% 60% at 50% 0%,rgba(246,241,228,.16),rgba(246,241,228,0) 60%)}
+.ff-hero-hills{position:absolute;left:0;right:0;bottom:0;width:100%;height:clamp(160px,28vh,300px);z-index:1}
+
+#hero-inner{
+  position:relative;z-index:3;max-width:820px!important;width:100%;margin-inline:auto;
+  align-items:center;text-align:center;will-change:opacity,transform;
+  opacity:clamp(0,calc(1 - var(--hero-progress,0) * 2),1);
+  transform:translateY(calc(var(--hero-progress,0) * -12vh));
+}
+#hero-inner>*{max-width:100%}
+.ff-hero-eyebrow{margin-bottom:clamp(18px,3vh,28px)!important;flex-wrap:wrap}
+.ff-hero-eyebrow .elementor-heading-title{font-family:'Cinzel',serif;font-size:clamp(10.5px,1vw,13px)!important;letter-spacing:.24em;text-transform:uppercase;color:var(--ff-light);line-height:1.3}
+.ff-hero-eyebrow .elementor-icon,.ff-hero-eyebrow .elementor-icon svg{color:var(--ff-light)!important;fill:var(--ff-light);width:16px;height:16px}
+.ff-hero-h1 .elementor-heading-title{font-size:clamp(42px,min(8.6vw,12vh),120px)!important;line-height:1;letter-spacing:-.02em}
+.ff-hero-h1--strong .elementor-heading-title{font-family:'Montserrat',sans-serif;font-weight:600;color:var(--ff-light)}
+.ff-hero-h1--script .elementor-heading-title{font-family:'Playfair Display',serif;font-style:italic;font-weight:400;color:var(--ff-gold-light)}
+.ff-hero-lead .elementor-widget-container{max-width:40em;margin-inline:auto}
+.ff-hero-lead p{color:rgba(246,241,228,.82)!important;font-size:clamp(14px,1.3vw,18px)!important;line-height:1.6!important}
+.ff-hero-badges{margin-top:clamp(18px,2.6vh,24px)!important;gap:clamp(14px,2vw,26px)!important}
+.ff-hero-badge .elementor-heading-title{color:rgba(246,241,228,.6)!important;font-size:clamp(10.5px,.9vw,12px)!important;letter-spacing:.08em}
+
+/* botao primario do hero — pill ESCURO (NAO usar verde: some no fundo verde) */
+.ff-btn-hero .elementor-button{
+  display:inline-flex;align-items:center;justify-content:center;gap:10px;
+  min-height:54px;padding:0 clamp(26px,3vw,36px)!important;
+  border-radius:999px!important;
+  background:#12180e!important;color:var(--ff-light)!important;
+  border:1px solid rgba(246,241,228,.14)!important;
+  box-shadow:0 18px 40px rgba(10,14,8,.45)!important;
+  font-size:clamp(12px,1vw,14px)!important;font-weight:600;letter-spacing:.1em;text-transform:uppercase;
+  animation:none!important;transition:transform .3s,background .3s;
+}
+.ff-btn-hero .elementor-button:hover{transform:translateY(-2px);background:#1c2417!important}
+.ff-btn-hero .elementor-button-icon svg{fill:var(--ff-light);width:16px;height:16px}
+
+/* ---------------- HERO — mockup da janela do app (§3.3 do brief, tudo placeholder) ---------------- */
+.ff-hero-mockup{
+  position:absolute;left:50%;top:50%;z-index:2;width:min(1100px,94vw);will-change:transform,opacity;
+  transform:translate(-50%,calc(-50% + (1 - var(--hero-progress,0)) * 72vh)) scale(calc(.9 + var(--hero-progress,0) * .1));
+  opacity:clamp(0,calc(.12 + var(--hero-progress,0) * 1.4),1);
+}
+.ff-mockup-frame{
+  padding:clamp(10px,1.4vw,18px);
+  border:1px solid rgba(246,241,228,.45);border-radius:clamp(20px,2.4vw,34px);
+  background:rgba(246,241,228,.22);backdrop-filter:blur(10px);
+  box-shadow:0 40px 90px rgba(20,26,15,.45),inset 0 1px 0 rgba(246,241,228,.4);
+}
+.ff-mockup-window{
+  display:grid;grid-template-columns:clamp(112px,14vw,168px) minmax(0,1fr);
+  height:clamp(270px,42vh,400px);border-radius:clamp(14px,1.8vw,22px);
+  background:#171d13;overflow:hidden;box-shadow:0 12px 30px rgba(10,14,8,.35);
+}
+.ff-mockup-sidebar{padding:clamp(14px,1.6vw,20px);border-right:1px solid rgba(246,241,228,.08)}
+.ff-mockup-brand{display:flex;align-items:center;gap:8px;color:rgba(246,241,228,.86);font-family:'Playfair Display',serif;font-size:clamp(12px,1vw,14px)}
+.ff-mockup-brand span{width:16px;height:16px;border-radius:5px;background:linear-gradient(135deg,var(--ff-gold-light),var(--ff-gold))}
+.ff-mockup-body{display:flex;flex-direction:column;gap:clamp(12px,1.6vh,18px);min-width:0;padding:clamp(14px,1.8vw,22px)}
+.ff-mockup-topbar{display:flex;align-items:center;gap:12px}
+.ff-mockup-search{display:flex;flex:1;align-items:center;gap:8px;min-width:0;padding:9px 14px;border-radius:999px;background:rgba(246,241,228,.08);color:rgba(246,241,228,.5);font-size:clamp(11px,.9vw,13px)}
+.ff-mockup-search svg{width:16px;height:16px;flex:none}
+.ff-mockup-tools{display:flex;flex:none;gap:6px}
+.ff-mockup-tools i{width:28px;height:28px;border-radius:50%;background:rgba(246,241,228,.08)}
+.ff-mockup-tabs{display:flex;gap:6px;overflow:hidden}
+.ff-mockup-tabs span{flex:none;padding:6px 12px;border-radius:999px;background:rgba(246,241,228,.06);color:rgba(246,241,228,.55);font-size:clamp(10px,.82vw,11.5px);letter-spacing:.04em;white-space:nowrap}
+.ff-mockup-tabs span.is-active{background:var(--ff-light);color:var(--ff-green);font-weight:600}
+.ff-mockup-tab-add{width:26px;padding:6px 0!important;text-align:center}
+.ff-mockup-cards{display:grid;flex:1;grid-template-columns:repeat(5,minmax(0,1fr));gap:clamp(8px,1vw,14px);min-height:0}
+.ff-mockup-card{display:flex;flex-direction:column;border-radius:12px;background:rgba(246,241,228,.05);overflow:hidden}
+.ff-mockup-card-media{display:flex;flex:1;align-items:center;justify-content:center;padding:10px;color:rgba(246,241,228,.85);font-size:clamp(9px,.8vw,11px);text-align:center}
+.ff-mockup-card-media.m-image{background:linear-gradient(135deg,#8a9478,#4b512d)}
+.ff-mockup-card-media.m-note{background:rgba(246,241,228,.1)}
+.ff-mockup-card-media.m-shot{background:linear-gradient(135deg,#dbcebe,#9d948d);color:var(--ff-green)}
+.ff-mockup-card-media.m-color{background:var(--ff-green);color:var(--ff-light);font-family:ui-monospace,monospace}
+.ff-mockup-card-media.m-icon{background:rgba(246,241,228,.92);color:var(--ff-gold);font-size:16px}
+.ff-mockup-card-foot{display:flex;align-items:center;gap:6px;padding:7px 8px;color:rgba(246,241,228,.45);font-size:9px}
+.ff-mockup-card-foot i{width:12px;height:12px;flex:none;border-radius:3px;background:rgba(246,241,228,.2)}
+
+/* selo girando (usado so na secao "conversar" — .ff-seal2) */
+.ff-seal2{position:relative;aspect-ratio:1;flex:none;border-radius:50%;display:grid;place-items:center;text-align:center;width:clamp(100px,11vw,128px);background:#3c4a34;box-shadow:0 0 0 1px rgba(217,184,119,.45),0 14px 30px rgba(20,26,15,.3)}
+.ff-seal-ring{position:absolute;inset:0;width:100%;height:100%;animation:ffSpin 44s linear infinite}
+.ff-seal2 .ff-seal-ring{animation-duration:40s}
+.ff-seal-ring text{font-family:'Cinzel',serif;font-size:8.6px;letter-spacing:3px;fill:rgba(217,184,119,.7)}
+.ff-seal2-logo{width:52px;height:52px;border-radius:50%;object-fit:cover}
+
+/* HERO — sem scroll pinado em telas estreitas: empilha conteudo e mockup */
+@media(max-width:900px){
+  #inicio{min-height:auto!important}
+  #inicio>.e-con-inner{min-height:0}
+  .ff-hero-sticky{position:static!important;height:auto!important;min-height:0!important;padding:clamp(104px,24vw,132px) clamp(18px,5vw,28px) clamp(60px,14vw,96px)!important}
+  .ff-hero-deco{display:none!important}
+  .ff-hero-mockupwrap{position:relative!important;height:auto!important;width:100%!important;margin-top:clamp(32px,9vw,56px)!important}
+  .ff-hero-mockupwrap .elementor-widget-html{position:relative;inset:auto}
+  #hero-inner{opacity:1!important;transform:none!important}
+  .ff-hero-mockup{position:relative;left:auto;top:auto;transform:none!important;opacity:1!important;width:100%}
+}
+@media(max-width:760px){
+  .ff-mockup-cards{grid-template-columns:repeat(3,minmax(0,1fr))}
+  .ff-mockup-card:nth-child(n+4){display:none}
+}
+
+/* ---------------- CAMINHOS ---------------- */
+#ff-paths{display:flex!important;flex-wrap:wrap;gap:clamp(30px,4vw,64px)}
+#ff-paths>.e-con{flex:1 1 calc(50% - 32px)!important;width:auto!important;min-width:min(100%,300px);text-align:center}
+.ff-pathcard .elementor-widget-text-editor{text-align:center}
+.elementor .ff-path-figure img{border-radius:46% 54% 42% 58% / 8% 8% 44% 44%!important;box-shadow:0 24px 50px rgba(47,50,29,.16)!important;aspect-ratio:4/3.4;object-fit:cover;object-position:50% 30%;width:100%;transition:transform .9s cubic-bezier(.22,.7,.2,1)}
+.elementor .ff-blob-b img{border-radius:54% 46% 58% 42% / 8% 8% 44% 44%!important;object-position:50% 32%}
+.ff-path-figure:hover img{transform:scale(1.05)}
+
+/* ---------------- DEPOIMENTOS ---------------- */
+#depoimentos{position:relative}
+.ff-depo-leaf{position:absolute;left:clamp(-30px,-1vw,0px);top:8%;width:clamp(80px,8vw,120px);opacity:.22;z-index:0;pointer-events:none}
+.elementor #ff-depopanel{border-radius:44% 56% 52% 48% / 22% 22% 26% 26%!important;position:relative;z-index:1}
+.ff-depo-kicker .elementor-heading-title{letter-spacing:.3em}
+#ff-depogrid{display:flex!important;flex-wrap:wrap;gap:0}
+#ff-depogrid>.e-con{flex:1 1 33.333%!important;width:auto!important;min-width:min(100%,240px);border-left:1px solid rgba(217,184,119,.26)}
+#ff-depogrid>.e-con:first-child{border-left:none}
+.ff-depo-ini{flex:none!important;width:56px;height:56px;border-radius:50%;background:rgba(236,229,211,.1);box-shadow:0 0 0 1px rgba(217,184,119,.4);display:grid!important;place-items:center}
+.ff-depo-ini .elementor-heading-title{line-height:1}
+@media(max-width:900px){#ff-depogrid>.e-con{border-left:none;border-top:1px solid rgba(217,184,119,.26)}#ff-depogrid>.e-con:first-child{border-top:none}}
+
+/* ---------------- SERVIÇO / MÉTODO / EMPRESAS ---------------- */
+#ff-svcgrid{display:flex!important;flex-wrap:wrap;gap:clamp(40px,5vw,84px);align-items:flex-start}
+#ff-svcgrid>.e-con:first-child{flex:0.72 1 0!important;width:auto!important;min-width:300px}
+#ff-svcgrid>.e-con:last-child{flex:1.28 1 0!important;width:auto!important;min-width:420px}
+.ff-h2 .elementor-heading-title{text-wrap:balance}
+/* Icon Box serviço: círculo dourado cheio + ícone claro */
+.ff-svc .elementor-icon-box-icon{margin-bottom:0}
+.ff-svc .elementor-icon{--e-icon-color:#f6f1e4;color:#f6f1e4!important;background:var(--ff-gold)!important;width:44px!important;height:44px!important;font-size:19px;display:flex!important;align-items:center;justify-content:center;border-radius:50%;padding:0!important}
+.ff-svc .elementor-icon svg{fill:#f6f1e4;width:19px;height:19px}
+.ff-svc .elementor-icon-box-title{margin:11px 0 8px!important}
+.ff-svc .elementor-icon-box-description{line-height:1.75}
+/* Icon Box empresas: círculo com borda dourada */
+.ff-card .elementor-icon{--e-icon-color:#8a7a4a;color:#8a7a4a!important;border:1px solid var(--ff-gold)!important;width:44px!important;height:44px!important;font-size:18px;display:flex!important;align-items:center;justify-content:center;border-radius:50%;background:transparent!important;padding:0!important}
+.ff-card .elementor-icon svg{fill:#8a7a4a;width:18px;height:18px}
+.ff-card .elementor-icon-box-title{margin:8px 0 9px!important}
+#ff-cardsgrid{display:grid!important;grid-template-columns:repeat(3,minmax(0,1fr));gap:clamp(28px,3vw,48px) clamp(28px,3vw,54px)}
+#ff-cardsgrid>.elementor-widget{width:auto!important}
+@media(max-width:1040px){#ff-cardsgrid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:720px){#ff-cardsgrid{grid-template-columns:1fr}}
+
+/* passos do método */
+#ff-stepsrow{display:flex!important;flex-wrap:nowrap;gap:clamp(6px,1vw,14px);align-items:flex-start}
+#ff-stepsrow>.e-con{flex:1 1 0!important;width:auto!important;min-width:0;text-align:center}
+#ff-stepsrow>.elementor-widget-html{flex:0 0 auto;align-self:flex-start;margin-top:34px}
+.ff-arrow{color:var(--ff-gold);font-size:13px;opacity:.7;line-height:1}
+@media(max-width:1040px){#ff-stepsrow{overflow-x:auto;padding-bottom:14px;-webkit-overflow-scrolling:touch}#ff-stepsrow>.e-con{flex:0 0 168px!important}.ff-arrow{display:none}}
+.ff-step-orb{margin:0 auto 16px!important}
+.ff-step-orb .elementor-icon{width:clamp(58px,6vw,74px);height:clamp(58px,6vw,74px);background:#e9e2d0;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:24px;color:#8a7a4a}
+.ff-step-orb .elementor-icon svg{fill:#8a7a4a;width:24px;height:24px}
+.ff-step-orb--gold .elementor-icon{background:var(--ff-gold)}
+.ff-step-orb--gold .elementor-icon svg{fill:#f6f1e4}
+.ff-step-num .elementor-heading-title{font-family:'Playfair Display',serif}
+.ff-step-name .elementor-heading-title{white-space:normal;overflow-wrap:normal;word-break:keep-all;hyphens:none;font-size:9.5px;letter-spacing:.04em}
+.ff-step{padding-inline:4px}
+.ff-step .elementor-widget-text-editor{font-size:13px}
+#ff-stepsrow>.elementor-widget-html{margin-top:30px}
+
+.ff-script .elementor-heading-title{font-family:'Petit Formal Script',cursive}
+
+/* ---------------- SOBRE ---------------- */
+#sobre{position:relative}
+#ff-sobregrid{display:flex!important;flex-wrap:wrap;gap:clamp(40px,5vw,86px);align-items:center}
+#ff-sobregrid>.e-con{flex:1 1 320px!important;width:auto!important}
+#ff-sobre-media{position:relative}
+#ff-sobre-media>.elementor-widget-html{position:absolute;inset:0}
+.ff-sobre-outline{position:absolute;left:8%;right:-6%;top:-5%;bottom:9%;border-radius:52% 48% 44% 56% / 46% 46% 54% 54%;border:1px solid var(--ff-gold);pointer-events:none;z-index:0}
+.elementor .ff-blob-c img{border-radius:48% 52% 46% 54% / 44% 44% 56% 56%!important;box-shadow:0 28px 60px rgba(47,50,29,.18)!important;aspect-ratio:5/5.2;object-fit:cover;object-position:50% 26%;width:100%;position:relative;z-index:1}
+.ff-sobre-inset{position:absolute!important;left:-2%;bottom:2%;width:clamp(112px,13vw,156px);max-width:clamp(112px,13vw,156px)!important;margin:0!important;z-index:3}
+.elementor .ff-sobre-inset img{border-radius:50%!important;box-shadow:0 0 0 6px #e7e0cf,0 16px 36px rgba(47,50,29,.26)!important;aspect-ratio:1;object-fit:cover;object-position:55% 26%;width:100%}
+#ff-chips{display:flex!important;gap:9px;flex-wrap:wrap}
+.ff-chip{flex:none!important}
+.ff-chip .elementor-heading-title{border:1px solid #bcb298;padding:9px 16px;border-radius:999px;display:inline-block;letter-spacing:.14em}
+
+/* ---------------- CONVERSAR ---------------- */
+#conversar{position:relative}
+#conversar>.elementor-widget-html{position:absolute;inset:0;z-index:1;pointer-events:none}
+.ff-conv-wave{position:absolute;left:0;right:0;top:-1px;width:100%;height:clamp(56px,7.5vw,110px);z-index:1}
+.ff-conv-glow{position:absolute;left:6%;bottom:-12%;width:min(320px,42vw);aspect-ratio:1;border-radius:50%;background:radial-gradient(circle at 40% 40%,rgba(203,157,80,.16),rgba(203,157,80,0) 70%)}
+#ff-convgrid{display:flex!important;flex-wrap:wrap;gap:clamp(36px,4vw,70px);align-items:center;position:relative;z-index:2}
+#ff-convgrid>.e-con:first-child{flex:1.06 1 0!important;width:auto!important;min-width:360px}
+#ff-convgrid>.e-con:last-child{flex:.94 1 0!important;width:auto!important;min-width:300px;position:relative}
+#ff-conv-media{position:relative}
+#ff-conv-media>.elementor-widget-html{position:static}
+.elementor .ff-blob-d img{border-radius:46% 54% 50% 50% / 50% 46% 54% 50%!important;box-shadow:0 26px 60px rgba(20,26,15,.34)!important;aspect-ratio:1;object-fit:cover;object-position:50% 42%;max-width:360px;width:100%}
+.ff-seal2{position:absolute!important;left:-2%;bottom:-8%}
+.ff-contact .elementor-icon-list-items{display:grid;grid-template-columns:1fr 1fr;gap:20px 34px;padding-top:32px;border-top:1px solid rgba(217,184,119,.24)}
+.ff-contact .elementor-icon-list-item{align-items:center;margin:0!important;padding:0!important}
+.ff-contact .elementor-icon-list-text{color:var(--ff-cream);font-size:13.5px}
+.ff-contact a:hover .elementor-icon-list-text{color:var(--ff-gold-light)}
+.ff-contact .elementor-icon-list-icon{width:38px;height:38px;flex:none;border-radius:50%;border:1px solid rgba(217,184,119,.45);display:flex!important;align-items:center;justify-content:center;color:var(--ff-gold-light);margin-right:14px}
+.ff-contact .elementor-icon-list-icon svg{width:15px;height:15px;fill:var(--ff-gold-light)}
+@media(max-width:720px){.ff-contact .elementor-icon-list-items{grid-template-columns:1fr}}
+
+/* ---------------- FOOTER ---------------- */
+#ff-footer>.e-con{width:auto!important;flex:0 1 auto}
+#ff-foot-brand{display:flex!important;align-items:center;gap:14px}
+#ff-foot-brand>.e-con{width:auto!important}
+.ff-foot-logo{flex:none}
+.ff-foot-logo img{width:38px!important;height:38px;border-radius:50%}
+.ff-foot-links .elementor-icon-list-items{display:flex!important;gap:26px;flex-wrap:wrap}
+.ff-foot-links .elementor-icon-list-item{margin:0!important;padding:0!important}
+.ff-foot-links .elementor-icon-list-item:after{display:none!important}
+.ff-foot-links .elementor-icon-list-icon{display:none!important}
+.ff-foot-links .elementor-icon-list-text{font-size:12.5px;color:#c6c0a8}
+.ff-foot-links a:hover .elementor-icon-list-text{color:var(--ff-gold-light)}
+
+/* ---------------- reveal on scroll (JS adiciona .ff-anim no <html>) ---------------- */
+.ff-anim .ff-reveal{opacity:0;transform:translateY(28px) scale(.98);transition:opacity .9s ease,transform .9s cubic-bezier(.22,.7,.2,1)}
+.ff-anim .ff-reveal.ff-in{opacity:1;transform:none}
+.elementor-invisible{opacity:1!important;animation:none!important}
+
+@media(max-width:900px){
+  #ff-paths>.e-con,#ff-svcgrid>.e-con,#ff-convgrid>.e-con,#ff-sobregrid>.e-con,#ff-depogrid>.e-con{flex-basis:100%!important}
+}
+@media(prefers-reduced-motion:reduce){
+  *{animation-duration:.001ms!important;animation-iteration-count:1!important;transition-duration:.001ms!important}
+  .ff-reveal{opacity:1!important;transform:none!important}
+  /* hero: sem pino nem parallax — empilha e mostra tudo */
+  #inicio{min-height:auto!important}
+  #inicio>.e-con-inner{min-height:0}
+  .ff-hero-sticky{position:static!important;height:auto!important;min-height:0!important;padding:clamp(104px,18vh,140px) clamp(20px,4vw,40px) clamp(60px,10vh,100px)!important}
+  .ff-hero-deco{display:none!important}
+  .ff-hero-mockupwrap{position:relative!important;height:auto!important;width:100%!important;margin-top:clamp(32px,6vh,56px)!important}
+  .ff-hero-mockupwrap .elementor-widget-html{position:relative;inset:auto}
+  #hero-inner,.ff-hero-mockup{opacity:1!important;transform:none!important}
+  .ff-hero-mockup{position:relative;left:auto;top:auto;width:100%}
+}
