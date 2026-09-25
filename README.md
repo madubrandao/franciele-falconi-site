@@ -33,6 +33,29 @@ Configuração inicial (uma vez): hPanel → Sites → (site) → **Avançado �
 criar repositório apontando para a URL deste repo, branch `main`, diretório `public_html`;
 depois copiar a *Webhook URL* e adicionar em GitHub → Settings → Webhooks.
 
+## Versão WordPress + Elementor (produção-alvo desde 2026-08-29)
+
+Além do site estático acima, existe uma versão em **WordPress + Elementor Free** que passou a ser
+o alvo de produção:
+
+- **URL:** https://gold-spider-281232.hostingersite.com/ (`blog_public=0` — ainda não indexável)
+- **Como foi montada:** `_wp-build/build-home.FROZEN-2026-08-29.php` gerou a Home (página ID 30) como
+  **8 blocos** — 1 container Elementor + 1 widget HTML por seção, com o markup **exato deste `index.html`**.
+  CSS/JS do design vivem no mu-plugin `wp-content/mu-plugins/ff-assets/` (`ff-assets.css` = o `<style>`
+  do design; `ff-assets.js` = o `<script>`).
+- **O `build-home` está CONGELADO.** Desde 2026-08-29 o **Elementor é a fonte da verdade** — rodá-lo
+  de novo apagaria as edições feitas no painel. Snapshot em `_wp-build/elementor-data-30.SNAPSHOT.json`.
+
+### Editar a versão WordPress
+
+- **Texto:** Elementor → abrir o widget HTML da seção → editar o HTML.
+- **Imagem:** trocar pela Biblioteca de Mídia do WordPress.
+- **Reordenar / esconder seção:** mover ou ocultar o container da seção no Elementor.
+- **CSS/JS estrutural:** editar `_wp-build/ff-assets.css` / `ff-assets.js`, mandar pro servidor
+  (`scp` → `wp-content/mu-plugins/ff-assets/`) e `wp litespeed-purge all`.
+- **SSH:** `ssh -i ~/.ssh/hostinger_franciele -p 65002 u431895820@147.93.38.91` →
+  `cd ~/domains/gold-spider-281232.hostingersite.com/public_html`.
+
 ## Pendências
 
 - **Depoimentos** na seção `#depoimentos` são placeholder — trocar pelos reais da Fran.

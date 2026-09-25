@@ -5,3 +5,4 @@ _raw/
 Thumbs.db
 *.log
 scripts/tmp/
+_wp-build/
